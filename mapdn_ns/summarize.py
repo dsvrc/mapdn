@@ -31,8 +31,8 @@ import yaml
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 PANEL = ("A", "load", "x_std", "fit_gain", "cond_psi", "beta_cos", "beta_relerr", "explained",
-         "updates", "skipped", "bounded", "diverged", "trust_pol", "trust_app", "corr_frac", "corr_dark",
-         "resid_after")
+         "updates", "skipped", "bounded", "diverged", "resets", "trust_pol", "trust_app", "corr_frac",
+         "corr_dark", "resid_after")
 METRIC = ("reward", "cr", "v_out", "q_loss", "destroy")
 
 

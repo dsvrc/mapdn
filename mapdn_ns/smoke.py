@@ -211,11 +211,12 @@ def _lone():
 @check("test_direct_control_is_felt_by_a_lone_actor")
 def _control():
     """The (B) control must be a DIFFERENT cell, and measurably so: with
-    every peer's curve inert and every peer silent, the one inverter still
-    feels the firmware's reaction to the solar day."""
+    every peer silent (zero VAR, from a zero reset) the one inverter that acts
+    still feels the firmware's reaction to the solar day -- the reaction does
+    not pass through the peers at all.  (The peers' curves are left on: the
+    (B) scale D_ref_i is defined from the coupled reaction under the reference
+    dispatch, which needs the fleet's nameplates.)"""
     env = build("blind", 2.0, direct=True, env_overrides={"reset_action": False})
-    env = build("blind", 2.0, direct=True, env_overrides={"reset_action": False},
-                overrides={"ns_structure": inert_peers_structure(env)})
     rng = np.random.default_rng(5)
 
     def acts(t, e):
@@ -227,7 +228,7 @@ def _control():
     d0 = float(env._d[0].abs())
     assert d0 > 0.0, "ns_direct=True still read zero for the lone actor; it is not cell (B)"
     assert float(env._d[0]) < 0.0, "the (B) reaction must absorb VARs (react to the PV-driven rise)"
-    return f"ns_direct at sigma=2, peers inert and silent: the lone actor reads {d0:.3f} MVAr -- cell (B), as intended"
+    return f"ns_direct at sigma=2, peers silent: the lone actor reads {d0:.3f} MVAr -- cell (B), as intended"
 
 
 @check("test_the_channel_is_invertible")

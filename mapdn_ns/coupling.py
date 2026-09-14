@@ -169,7 +169,8 @@ class Coupling:
         return self.S.abs().sum(-1).transpose(0, 1) > 0  # (N, r)
 
     def design(self, x: Tensor, ref: Tensor, scale: Tensor) -> Tensor:
-        """``psi = [1, (x - ref) / scale]``.  ``(N, 1 + r)``.
+        """``psi = [1, (x - ref) / scale]``.  ``(N, 1 + r)``.  ``ref``/``scale``
+        are ``(r,)`` (pooled) or ``(N, r)`` (per inverter).
 
         P-3.3: centre and scale on a geometric reference.  Raw channels carry a
         common mean against an intercept column of 1; measured on the source
@@ -177,7 +178,9 @@ class Coupling:
         which the intercept and the class channels trade off and the per-class
         split is unidentifiable even though prediction is fine.
         """
-        centred = (x - ref.reshape(1, -1)) / scale.reshape(1, -1).clamp_min(1e-9)
+        if ref.dim() == 1:
+            ref, scale = ref.reshape(1, -1), scale.reshape(1, -1)
+        centred = (x - ref) / scale.clamp_min(1e-9)
         ones = torch.ones_like(centred[:, :1])
         return torch.cat([ones, centred], dim=-1)
 
@@ -198,11 +201,23 @@ class Coupling:
         u = torch.rand(samples, self.n, generator=gen) * 2.0 - 1.0
         return (u * self.st.action_scale * self.s_rated.cpu().reshape(1, -1)).to(self.S.device)
 
-    def geometric_reference(self, samples: int = 512, seed: int = 0) -> Tuple[Tensor, Tensor]:
-        """``(ref, scale)``, each ``(r,)``: the channel each inverter would see if
-        every peer dispatched uniformly at random from the host's own range.
-        Computed with an explicit CPU generator so it cannot consume the run's
-        RNG stream and cannot differ between arms."""
+    def geometric_reference(self, samples: int = 512, seed: int = 0,
+                            per_agent: bool = False) -> Tuple[Tensor, Tensor]:
+        """``(ref, scale)``: the channel each inverter would see if every peer
+        dispatched uniformly at random from the host's own range.  Computed with
+        an explicit CPU generator so it cannot consume the run's RNG stream and
+        cannot differ between arms.
+
+        ``per_agent=False`` pools the fleet -- ``(r,)`` each -- and is what the
+        OBSERVATION carries, so every arm sees the same feature.  ``per_agent=
+        True`` returns ``(N, r)`` and is what the ESTIMATOR must centre on: one
+        scale shared across 22 inverters whose paths run 5-31 segments and
+        whose nameplates span 0.9-12 MVA gave design-matrix condition numbers
+        of 1e4-1e6, float32 RLS lost positive-definiteness by episode 31 and
+        the compensator disarmed itself for the rest of the run (measured on
+        case141).  The porting notes' trap #4, and HANDOFF's "one scale shared
+        across agents: cond 72,148 vs 57".
+        """
         Q = self.reference_dispatch(samples, seed)
         x = torch.zeros(self.n, self.r, device=self.S.device)
         vals = []
@@ -211,7 +226,10 @@ class Coupling:
             for _ in range(3 if self.p.rho > 0 else 1):
                 x = self.step_channels(Q[k], x)
             vals.append(x)
-        V = torch.stack(vals).reshape(-1, self.r)
+        V = torch.stack(vals)  # (samples, N, r)
+        if per_agent:
+            return V.mean(0), V.std(0, unbiased=False).clamp_min(1e-9)
+        V = V.reshape(-1, self.r)
         return V.mean(0), V.std(0, unbiased=False).clamp_min(1e-9)
 
     def derate_reference(self, samples: int = 512, seed: int = 7) -> Tensor:

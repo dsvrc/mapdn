@@ -270,6 +270,17 @@ runs its own RLS over its own live columns.
 * **β scored on unobservable columns.**  Scored against the full β\*, an
   inverter with a dead class channel read as an estimation failure.  β is
   scored on each inverter's live columns (`Coupling.channel_liveness`).
+* **One centring scale shared across inverters** (case141).  The pooled
+  P‑3.3 reference gave per-inverter design-matrix condition numbers of
+  1e4–1e6 on 22 inverters with paths of 5–31 segments and nameplates of
+  0.9–12 MVA; the float32 RLS lost positive-definiteness at episode 31 of a
+  training run, 89 756 predictions went non-finite and the confidence gate
+  disarmed the compensator for the rest of the run (`trust_app` 0.24).  The
+  estimator now centres each inverter on its **own** reference (`(N, r)`),
+  holds its state in float64, and re-initialises any inverter's RLS whose
+  state goes non-finite (`resets` column).  The observation keeps the pooled
+  reference, so blind/B0 runs are unaffected.  Probe on case141 at σ = 3
+  after the fix: `cond_psi` 720, 0 diverged, `fit_gain` 0.66, β cos 0.75.
 * **The ratios explode in the dark.**  `|corr| / |d|` and `pred_err / |d|`
   averaged per step blow up wherever `A(t) = 0`; they are episode sums, and
   NaN when there was no disturbance to explain.

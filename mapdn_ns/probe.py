@@ -25,7 +25,7 @@ from mapdn_ns.hosts import build_env  # noqa: E402
 
 COLS = ("ns_A", "ns_load", "ns_sat", "ns_x_std", "pact_fit_gain", "pact_cond_psi", "pact_beta_cos",
         "pact_beta_relerr", "pact_pred_err", "pact_conf", "pact_trust_app", "pact_corr_abs",
-        "pact_updates", "pact_skipped", "pact_bounded", "pact_diverged", "ns_resid_after")
+        "pact_updates", "pact_skipped", "pact_bounded", "pact_diverged", "pact_resets", "ns_resid_after")
 
 
 def main() -> int:
