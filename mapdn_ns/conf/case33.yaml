@@ -1,0 +1,100 @@
+# Coupling Under Drift on MAPDN case33 (6 PV inverters, IEEE 33-bus feeder).
+#
+# Cell: (C, INVERTIBLE) -- the same cell as simple_ns.  ns_direct: true is the
+# (B) control.  Read mapdn_ns/README.md for what is and is not implemented.
+#
+# ---------------------------------------------------------------------------
+# The story, every clause a requirement
+# ---------------------------------------------------------------------------
+# Six PV inverters on one 12.66 kV radial feeder are dispatched, once every
+# three minutes, to inject or absorb reactive power so the feeder's voltages
+# stay inside 0.95-1.05 pu.  MAPDN's inverters follow that setpoint exactly.
+# Real ones do not: every IEEE 1547-2018 inverter ships with an AUTONOMOUS
+# volt-var curve in its firmware, and the utility requires it enabled, so what
+# each unit delivers is the dispatched VAR plus the firmware's droop on its own
+# terminal voltage.  That terminal voltage is moved by every OTHER inverter's
+# VARs through the feeder's reactance.  So the fleet's curves react to each
+# other's dispatch -- "smart-inverter control interaction", the reason fleets
+# under central dispatch are so often forced into constant-Q mode.
+#
+#   INTERACTION-MEDIATED  the reaction you feel is to the voltage your peers
+#                         imposed; the sum runs over j != i, so one inverter
+#                         alone on the feeder reads exactly zero at any sigma
+#   EXOGENOUS DRIVER      the solar day: the PV-driven rise puts the fleet on
+#                         the slope of its curves by day; at night the profile
+#                         sits in the deadband and the firmware is inert --
+#                         half of every day is EXACTLY quiet (the placebo)
+#   NEVER A REWARD TERM   the delivered VARs are corrupted; the reward is the
+#                         stock host's, byte for byte
+#   INVERTIBLE            dispatch extra to cover the reaction -- what a DERMS
+#                         already does -- and it dies at the curve's own
+#                         saturation (0.44 pu) and at sqrt(S^2 - P^2)
+#   THE CLASSES ARE REAL  elements are the feeder's segments; the class is the
+#                         conductor size; public = which segments a neighbour's
+#                         VARs cross (the network file); unknown = what a unit
+#                         of VAR on each class costs you today
+#   ANCHORED              sigma = 1 is the IEEE 1547-2018 Category B DEFAULT
+#                         slope, 0.44 pu-Q / 0.06 pu-V = 7.33; sigma = 3 is the
+#                         steepest curve the standard allows; sigma = 0.34 is
+#                         the Category A default; above 3 is beyond-physical
+#
+# ---------------------------------------------------------------------------
+# The operating point  (mapdn_ns/calibrate.py, 2026-09-13; see RESULTS.md)
+# ---------------------------------------------------------------------------
+# Calibrated on the shipped host with the scripted volt-var controller in
+# mapdn_ns/controllers.py, six 12-hour episodes spanning the day, l1 barrier.
+# loss xB0 = mean per-step loss over the sigma=0 blind value; CR = MAPDN's
+# controllable ratio.  The row quoted as the headline must have oracle near
+# B0 (else it is past sigma* and about the environment, not the method).
+#
+#   sigma   blind loss xB0 / CR   oracle          pact            note
+#     0.5   0.998 / 0.978         1.000 / 0.978   1.000 / 0.979   inert
+#     1     0.998 / 0.978         1.000 / 0.978   1.000 / 0.979   inert (Cat. B default, loop gain 0.38)
+#     2     1.442 / 0.837         0.999 / 0.978   1.004 / 0.976   99% of the gap recovered
+#     3     1.867 / 0.731         0.999 / 0.978   1.013 / 0.973   98% -- COMMITTED (steepest compliant curve)
+#     6     2.333 / 0.642         0.998 / 0.979   1.119 / 0.902   91%; beyond-physical
+#
+ns:
+  # -- the experimental variable ---------------------------------------------
+  ns_severity: 3.0          # sigma.  0 recovers the stock task bit for bit.
+                            #   3.0 = the operating point above; 1.0 = the anchor
+  ns_direct: false          # true = the (B) control (a lone inverter feels it)
+
+  # -- the driver (NS-1.3, NS-2.5) -------------------------------------------
+  ns_driver: solar          # solar = sin^2 clear-sky day; schedule = on/off
+  ns_day_start_hour: 6.0    # the fleet's curves are on their slope in
+  ns_day_end_hour: 18.0     #   [6, 18); EXACTLY inert outside it
+
+  # -- the anchor (NS-2.4) ---------------------------------------------------
+  ns_k_slope: 7.333333333333333   # IEEE 1547-2018 Cat. B default, pu-Q/pu-V
+  ns_q_sat: 0.44                  # Q1 = -Q4 of that curve: the saturation
+
+  # -- the medium ------------------------------------------------------------
+  ns_rho: 0.0               # channel memory; the firmware is fast vs 3 min
+
+  # -- the declared classes (P-1.1, P-1.2) -----------------------------------
+  ns_n_classes: 3           # r: conductor-size terciles of the feeder's segments
+  ns_send_spread: 0.8       # spread of the unknown per-class gain (beta*)
+
+  # -- the sensor (P-2.1) ----------------------------------------------------
+  ns_y_clip: 10.0
+  ns_observe_residual: true # every arm sees its own one-step-stale residual
+  ns_observe_channels: true # ... and the public channels: information-matched
+  ns_observe_driver: false  # ablation: publish the realised A(t) to every arm
+  ns_structure: null        # path to structure_<scenario>.json; null = default
+
+  # -- PACT (II.4-II.7); imported from pact1/core.py, never reimplemented ------
+  pact_enabled: false       # set by the arm (mapdn_ns/run.py --arm)
+  pact_trust: 0.9           # P-5.1: the inverted prior, near full reliance
+  pact_mu: 0.98             # SWEPT, not inherited: URB's 0.999 is a 1000-step
+                            #   memory against a 240-step half-day; select on
+                            #   prediction error, never on return (README)
+  pact_p0: 10.0
+  pact_p_trace_max: 100.0   # covariance windup bound (trap #7)
+  pact_warmup: 40           # rows before trust arms (a fifth of an episode)
+  pact_corr_clip: 0.6       # bound on the correction, fraction of the VAR range:
+                            #   0.6 x 0.8 = 0.48 of nameplate, just above the curve's
+                            #   0.44 saturation, so a CORRECT estimate is never clipped
+  pact_channels: full       # full | intercept (the (B)-vs-(C) ablation)
+  pact_oracle: false        # true = the ceiling arm
+  pact_known_driver: false  # ablation: psi = [1, A, A z]; beta* then stationary

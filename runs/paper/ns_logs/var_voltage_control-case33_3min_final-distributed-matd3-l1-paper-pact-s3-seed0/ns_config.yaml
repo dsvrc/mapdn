@@ -1,0 +1,31 @@
+ns:
+  ns_severity: 3.0
+  ns_direct: false
+  ns_driver: solar
+  ns_day_start_hour: 6.0
+  ns_day_end_hour: 18.0
+  ns_k_slope: 7.333333333333333
+  ns_q_sat: 0.44
+  ns_rho: 0.0
+  ns_n_classes: 3
+  ns_send_spread: 0.8
+  ns_y_clip: 10.0
+  ns_observe_residual: true
+  ns_observe_channels: true
+  ns_observe_driver: false
+  ns_structure: null
+  pact_enabled: true
+  pact_trust: 0.9
+  pact_mu: 0.98
+  pact_p0: 10.0
+  pact_p_trace_max: 100.0
+  pact_warmup: 40
+  pact_corr_clip: 0.6
+  pact_channels: full
+  pact_oracle: false
+  pact_known_driver: false
+arm: pact
+seed: 0
+alg: matd3
+scenario: case33_3min_final
+barrier: l1
