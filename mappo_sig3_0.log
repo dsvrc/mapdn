@@ -1,0 +1,1217 @@
+==============================================================================
+mapdn_ns launcher  script=train alg=mappo arm=blind sigma=3 direct=False seed=0 scenario=case141_3min_final barrier=l1
+log_name           var_voltage_control-case141_3min_final-distributed-mappo-l1-paper-blind-s3-seed0
+debug csv          runs/ns_logs/var_voltage_control-case141_3min_final-distributed-mappo-l1-paper-blind-s3-seed0/pact_debug.csv
+==============================================================================
+This is the s_max: 
+[ 4.06710828  4.06710828  9.39838018  9.39838018  1.48406276 10.04474004
+ 10.04474004  2.13486849  2.13486849  2.13486849  2.13486849  0.87463775
+  0.87463775  0.87463775  5.76713732  5.76713732 12.35333912 12.35333912
+  1.40215631  1.40215631  1.40215631  1.40215631]
+feeder          case141_3min_final: 140 elements, 22 inverters, V_base=12.5 kV
+                classes {'heavy': 47, 'medium': 47, 'light': 46}  (conductor size: tercile of r_ohm_per_km (heavy trunk / medium / light lateral))
+                path lengths [5, 7, 8, 13, 18, 16, 22, 17, 16, 20, 16, 12, 15, 14, 15, 14, 27, 18, 18, 23, 25, 31]
+                s_rated (MVA) [4.067, 4.067, 9.398, 9.398, 1.484, 10.045, 10.045, 2.135, 2.135, 2.135, 2.135, 0.875, 0.875, 0.875, 5.767, 5.767, 12.353, 12.353, 1.402, 1.402, 1.402, 1.402]
+coupling        N=22 r=3 classes=['heavy', 'medium', 'light']
+                send (unknown) [1.8, 1.0, 0.2]
+                W (MVAr/MVAr @ sigma=1, A=1): mean 0.0322 max 0.2131 spread 1.185 asym 0.444 zero-pairs 0%
+                k_slope=7.333 q_sat=0.44 rho=0.0
+                loop gain rho(W)=0.675 at sigma=1 -> the fleet hunts at noon for sigma > 1.48
+ns layer        sigma=3.0 driver=solar day=[6,18) N=22 D_ref=0.105 of the VAR range obs+=(residual=True, channels=True, driver=False) channel=COUPLED (C)
+GenericDict(gumbel_softmax=False, epsilon_softmax=False, softmax_eps=None, episodic=False, cuda=True, grad_clip_eps=1.0, save_model_freq=40, replay_warmup=0, policy_lrate=0.0001, value_lrate=0.0001, mixer_lrate=None, target=True, target_lr=0.1, entr=0.001, max_steps=240, batch_size=32, replay=True, replay_buffer_size=5000.0, agent_type='rnn', agent_id=True, shared_params=True, layernorm=True, mixer=False, gaussian_policy=False, LOG_STD_MIN=0.0, LOG_STD_MAX=0.5, fixed_policy_std=1.0, hid_activation='relu', init_type='normal', init_std=0.1, action_enforcebound=True, double_q=True, clip_c=1.0, gamma=0.99, hid_size=64, continuous=True, normalize_advantages=True, train_episodes_num=400, behaviour_update_freq=240, target_update_freq=480, policy_update_epochs=10, value_update_epochs=10, mixer_update_epochs=None, reward_normalisation=True, eval_freq=20, num_eval_episodes=10, lambda_=0.95, eps_clip=0.6, value_loss_coef=2.0, action_scale=0.6, action_bias=0.0, agent_num=22, obs_size=102, action_dim=1)
+
+Episode terminated at time: 240 with return: -58.7619.
+Episode terminated at time: 240 with return: -36.8149.
+Episode terminated at time: 240 with return: -31.6380.
+Episode terminated at time: 240 with return: -45.9057.
+Episode terminated at time: 240 with return: -37.1161.
+Episode terminated at time: 240 with return: -20.1254.
+Episode terminated at time: 240 with return: -25.5915.
+Episode terminated at time: 240 with return: -37.8774.
+Episode terminated at time: 240 with return: -35.3290.
+Episode terminated at time: 240 with return: -18.4256.
+Episode terminated at time: 240 with return: -21.5899.
+Episode terminated at time: 240 with return: -47.1104.
+Episode terminated at time: 240 with return: -54.5397.
+Episode terminated at time: 240 with return: -44.3274.
+Episode terminated at time: 240 with return: -51.6316.
+Episode terminated at time: 240 with return: -44.4302.
+Episode terminated at time: 240 with return: -55.6793.
+Episode terminated at time: 240 with return: -45.7045.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 185 with return: -239.2347.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 104 with return: -222.4513.
+Episode terminated at time: 240 with return: -45.4054.
+Episode terminated at time: 240 with return: -58.1885.
+Episode terminated at time: 240 with return: -55.5230.
+Episode terminated at time: 240 with return: -50.4550.
+Episode terminated at time: 240 with return: -53.5256.
+Episode terminated at time: 240 with return: -44.7566.
+Episode terminated at time: 240 with return: -55.1313.
+Episode terminated at time: 240 with return: -46.7510.
+Episode terminated at time: 240 with return: -45.1966.
+Episode terminated at time: 240 with return: -45.1986.
+Episode terminated at time: 240 with return: -44.4959.
+Episode terminated at time: 240 with return: -38.0492.
+Episode terminated at time: 240 with return: -31.7419.
+Episode terminated at time: 240 with return: -43.0198.
+Episode terminated at time: 240 with return: -41.3253.
+Episode terminated at time: 240 with return: -31.4060.
+Episode terminated at time: 240 with return: -31.8618.
+Episode terminated at time: 240 with return: -31.0702.
+Episode terminated at time: 240 with return: -52.6115.
+Episode terminated at time: 240 with return: -41.1938.
+Episode terminated at time: 240 with return: -44.3801.
+Episode terminated at time: 240 with return: -51.4396.
+Episode terminated at time: 240 with return: -52.2072.
+Episode terminated at time: 240 with return: -47.5022.
+Episode terminated at time: 240 with return: -56.5898.
+Episode terminated at time: 240 with return: -44.7593.
+Episode terminated at time: 240 with return: -45.4018.
+Episode terminated at time: 240 with return: -58.8334.
+Episode terminated at time: 240 with return: -49.4932.
+Episode terminated at time: 240 with return: -45.2540.
+Episode terminated at time: 240 with return: -44.4411.
+Episode terminated at time: 240 with return: -44.1287.
+Episode terminated at time: 240 with return: -45.3769.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 237 with return: -251.8107.
+Episode terminated at time: 240 with return: -51.3394.
+Episode terminated at time: 240 with return: -49.1552.
+Episode terminated at time: 240 with return: -45.0870.
+Episode terminated at time: 240 with return: -54.4077.
+Episode terminated at time: 240 with return: -55.4560.
+Episode terminated at time: 240 with return: -52.5590.
+Episode terminated at time: 240 with return: -37.7648.
+Episode terminated at time: 240 with return: -29.4913.
+Episode terminated at time: 240 with return: -40.8281.
+Episode terminated at time: 240 with return: -32.7568.
+Episode terminated at time: 240 with return: -48.8870.
+Episode terminated at time: 240 with return: -28.2839.
+Episode terminated at time: 240 with return: -29.2249.
+Episode terminated at time: 240 with return: -47.1510.
+Episode terminated at time: 240 with return: -28.4523.
+Episode terminated at time: 240 with return: -26.0290.
+
+Episode: 40
+mean_train_value_grad_norm: 1.9884
+mean_train_value_loss: 2.1200
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.0202
+mean_train_policy_loss: 0.0531
+mean_train_reward: -0.2199
+mean_train_percentage_of_v_out_of_control: 0.3642
+mean_train_percentage_of_lower_than_lower_v: 0.2375
+mean_train_percentage_of_higher_than_upper_v: 0.1267
+mean_train_totally_controllable_ratio: 0.3305
+mean_train_average_voltage_deviation: 0.0491
+mean_train_average_voltage: 0.9837
+mean_train_max_voltage_drop_deviation: 0.0221
+mean_train_max_voltage_rise_deviation: 0.0152
+mean_train_total_line_loss: 3.0096
+mean_train_q_loss: 1.7078
+mean_train_destroy: 0.0000
+mean_train_ns_A: 0.2865
+mean_train_ns_hour: 17.5500
+mean_train_ns_load: 0.1266
+mean_train_ns_load_frac: 0.2110
+mean_train_ns_y: -0.0175
+mean_train_ns_sat: 0.1968
+mean_train_ns_clipped: 0.0148
+mean_train_ns_x_std: 0.0180
+mean_train_ns_q_exec_abs: 1.7078
+mean_train_ns_q_cmd_abs: 1.5845
+mean_train_ns_resid_after: 0.1262
+mean_test_reward: -0.1460
+mean_test_percentage_of_v_out_of_control: 0.1809
+mean_test_percentage_of_lower_than_lower_v: 0.0432
+mean_test_percentage_of_higher_than_upper_v: 0.1377
+mean_test_totally_controllable_ratio: 0.7372
+mean_test_average_voltage_deviation: 0.0327
+mean_test_average_voltage: 1.0160
+mean_test_max_voltage_drop_deviation: 0.0018
+mean_test_max_voltage_rise_deviation: 0.0176
+mean_test_total_line_loss: 2.2550
+mean_test_q_loss: 1.1328
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.2355
+mean_test_ns_hour: 13.0195
+mean_test_ns_load: 0.1001
+mean_test_ns_load_frac: 0.1669
+mean_test_ns_y: -0.0273
+mean_test_ns_sat: 0.1236
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0120
+mean_test_ns_q_exec_abs: 1.1328
+mean_test_ns_q_cmd_abs: 1.0504
+mean_test_ns_resid_after: 0.1001
+The model is saved!
+
+Episode terminated at time: 240 with return: -44.7107.
+Episode terminated at time: 240 with return: -50.9853.
+Episode terminated at time: 240 with return: -51.0470.
+Episode terminated at time: 240 with return: -44.4760.
+Episode terminated at time: 240 with return: -44.8953.
+Episode terminated at time: 240 with return: -45.5748.
+Episode terminated at time: 240 with return: -57.3835.
+Episode terminated at time: 240 with return: -45.1098.
+Episode terminated at time: 240 with return: -51.8350.
+Episode terminated at time: 240 with return: -54.5265.
+Episode terminated at time: 240 with return: -44.1831.
+Episode terminated at time: 240 with return: -49.1426.
+Episode terminated at time: 240 with return: -53.3207.
+Episode terminated at time: 240 with return: -46.2680.
+Episode terminated at time: 240 with return: -55.3257.
+Episode terminated at time: 240 with return: -48.3013.
+Episode terminated at time: 240 with return: -56.0598.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 15 with return: -203.9544.
+Episode terminated at time: 240 with return: -45.6815.
+Episode terminated at time: 240 with return: -46.7016.
+Episode terminated at time: 240 with return: -42.3346.
+Episode terminated at time: 240 with return: -34.1117.
+Episode terminated at time: 240 with return: -34.5353.
+Episode terminated at time: 240 with return: -39.2728.
+Episode terminated at time: 240 with return: -26.6952.
+Episode terminated at time: 240 with return: -28.6640.
+Episode terminated at time: 240 with return: -45.2969.
+Episode terminated at time: 240 with return: -39.0537.
+Episode terminated at time: 240 with return: -34.1005.
+Episode terminated at time: 240 with return: -39.1462.
+Episode terminated at time: 240 with return: -52.3461.
+Episode terminated at time: 240 with return: -56.4713.
+Episode terminated at time: 240 with return: -49.8887.
+Episode terminated at time: 240 with return: -53.1531.
+Episode terminated at time: 240 with return: -54.9771.
+Episode terminated at time: 240 with return: -49.0057.
+Episode terminated at time: 240 with return: -45.6647.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 179 with return: -237.8666.
+Episode terminated at time: 240 with return: -55.7337.
+Episode terminated at time: 240 with return: -46.0695.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 213 with return: -241.9870.
+Episode terminated at time: 240 with return: -45.5936.
+Episode terminated at time: 240 with return: -51.3021.
+Episode terminated at time: 240 with return: -51.2664.
+Episode terminated at time: 240 with return: -55.4579.
+Episode terminated at time: 240 with return: -47.5954.
+Episode terminated at time: 240 with return: -52.0376.
+Episode terminated at time: 240 with return: -44.7558.
+Episode terminated at time: 240 with return: -44.6108.
+Episode terminated at time: 240 with return: -56.6245.
+Episode terminated at time: 240 with return: -35.5413.
+Episode terminated at time: 240 with return: -42.1979.
+Episode terminated at time: 240 with return: -33.0037.
+Episode terminated at time: 240 with return: -28.8727.
+Episode terminated at time: 240 with return: -37.2316.
+Episode terminated at time: 240 with return: -28.3868.
+Episode terminated at time: 240 with return: -34.8916.
+Episode terminated at time: 240 with return: -27.3060.
+Episode terminated at time: 240 with return: -27.5234.
+Episode terminated at time: 240 with return: -28.2239.
+
+Episode: 80
+mean_train_value_grad_norm: 2.5023
+mean_train_value_loss: 2.2502
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.0308
+mean_train_policy_loss: 0.0545
+mean_train_reward: -0.2369
+mean_train_percentage_of_v_out_of_control: 0.4522
+mean_train_percentage_of_lower_than_lower_v: 0.1662
+mean_train_percentage_of_higher_than_upper_v: 0.2860
+mean_train_totally_controllable_ratio: 0.2887
+mean_train_average_voltage_deviation: 0.0587
+mean_train_average_voltage: 1.0177
+mean_train_max_voltage_drop_deviation: 0.0153
+mean_train_max_voltage_rise_deviation: 0.0358
+mean_train_total_line_loss: 4.1112
+mean_train_q_loss: 1.7824
+mean_train_destroy: 0.0000
+mean_train_ns_A: 0.4961
+mean_train_ns_hour: 10.5500
+mean_train_ns_load: 0.2294
+mean_train_ns_load_frac: 0.3823
+mean_train_ns_y: -0.0310
+mean_train_ns_sat: 0.3606
+mean_train_ns_clipped: 0.0289
+mean_train_ns_x_std: 0.0197
+mean_train_ns_q_exec_abs: 1.7824
+mean_train_ns_q_cmd_abs: 1.5644
+mean_train_ns_resid_after: 0.2285
+mean_test_reward: -0.1352
+mean_test_percentage_of_v_out_of_control: 0.1698
+mean_test_percentage_of_lower_than_lower_v: 0.0436
+mean_test_percentage_of_higher_than_upper_v: 0.1262
+mean_test_totally_controllable_ratio: 0.7439
+mean_test_average_voltage_deviation: 0.0303
+mean_test_average_voltage: 1.0118
+mean_test_max_voltage_drop_deviation: 0.0035
+mean_test_max_voltage_rise_deviation: 0.0130
+mean_test_total_line_loss: 1.8968
+mean_test_q_loss: 1.0495
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.2305
+mean_test_ns_hour: 11.5500
+mean_test_ns_load: 0.0891
+mean_test_ns_load_frac: 0.1485
+mean_test_ns_y: -0.0287
+mean_test_ns_sat: 0.1037
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0110
+mean_test_ns_q_exec_abs: 1.0495
+mean_test_ns_q_cmd_abs: 1.0125
+mean_test_ns_resid_after: 0.0891
+The model is saved!
+
+Episode terminated at time: 240 with return: -45.2761.
+Episode terminated at time: 240 with return: -45.1653.
+Episode terminated at time: 240 with return: -55.8547.
+Episode terminated at time: 240 with return: -58.1715.
+Episode terminated at time: 240 with return: -56.3950.
+Episode terminated at time: 240 with return: -50.6838.
+Episode terminated at time: 240 with return: -56.1827.
+Episode terminated at time: 240 with return: -49.9528.
+Episode terminated at time: 240 with return: -43.7891.
+Episode terminated at time: 240 with return: -53.5745.
+Episode terminated at time: 240 with return: -48.6345.
+Episode terminated at time: 240 with return: -49.0875.
+Episode terminated at time: 240 with return: -47.0506.
+Episode terminated at time: 240 with return: -44.7979.
+Episode terminated at time: 240 with return: -44.1964.
+Episode terminated at time: 240 with return: -45.4896.
+Episode terminated at time: 240 with return: -49.1281.
+Episode terminated at time: 240 with return: -54.0231.
+Episode terminated at time: 240 with return: -53.7607.
+Episode terminated at time: 240 with return: -56.2845.
+Episode terminated at time: 240 with return: -29.2925.
+Episode terminated at time: 240 with return: -37.9792.
+Episode terminated at time: 240 with return: -42.5753.
+Episode terminated at time: 240 with return: -29.8694.
+Episode terminated at time: 240 with return: -31.7831.
+Episode terminated at time: 240 with return: -27.7080.
+Episode terminated at time: 240 with return: -31.6125.
+Episode terminated at time: 240 with return: -44.3117.
+Episode terminated at time: 240 with return: -31.8667.
+Episode terminated at time: 240 with return: -37.0545.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 11 with return: -202.2932.
+Episode terminated at time: 240 with return: -54.5900.
+Episode terminated at time: 240 with return: -46.9231.
+Episode terminated at time: 240 with return: -50.3456.
+Episode terminated at time: 240 with return: -43.7912.
+Episode terminated at time: 240 with return: -55.0540.
+Episode terminated at time: 240 with return: -54.2078.
+Episode terminated at time: 240 with return: -45.7557.
+Episode terminated at time: 240 with return: -44.4106.
+Episode terminated at time: 240 with return: -54.2448.
+Episode terminated at time: 240 with return: -52.3301.
+Episode terminated at time: 240 with return: -45.1467.
+Episode terminated at time: 240 with return: -45.1334.
+Episode terminated at time: 240 with return: -51.8592.
+Episode terminated at time: 240 with return: -54.1957.
+Episode terminated at time: 240 with return: -44.5302.
+Episode terminated at time: 240 with return: -43.2861.
+Episode terminated at time: 240 with return: -46.2705.
+Episode terminated at time: 240 with return: -44.8457.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 201 with return: -247.1508.
+Episode terminated at time: 240 with return: -34.1695.
+Episode terminated at time: 240 with return: -34.7790.
+Episode terminated at time: 240 with return: -44.4010.
+Episode terminated at time: 240 with return: -34.1017.
+Episode terminated at time: 240 with return: -40.5806.
+Episode terminated at time: 240 with return: -35.6952.
+Episode terminated at time: 240 with return: -50.1983.
+Episode terminated at time: 240 with return: -40.6551.
+Episode terminated at time: 240 with return: -37.4806.
+Episode terminated at time: 240 with return: -43.0205.
+
+Episode: 120
+mean_train_value_grad_norm: 2.1870
+mean_train_value_loss: 2.1330
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.0289
+mean_train_policy_loss: 0.0499
+mean_train_reward: -1.2358
+mean_train_percentage_of_v_out_of_control: 0.4128
+mean_train_percentage_of_lower_than_lower_v: 0.2626
+mean_train_percentage_of_higher_than_upper_v: 0.1502
+mean_train_totally_controllable_ratio: 0.3450
+mean_train_average_voltage_deviation: 0.0547
+mean_train_average_voltage: 0.9834
+mean_train_max_voltage_drop_deviation: 0.0313
+mean_train_max_voltage_rise_deviation: 0.0158
+mean_train_total_line_loss: 3.7610
+mean_train_q_loss: 1.8118
+mean_train_destroy: 0.0050
+mean_train_ns_A: 0.4404
+mean_train_ns_hour: 8.4750
+mean_train_ns_load: 0.1915
+mean_train_ns_load_frac: 0.3191
+mean_train_ns_y: -0.0196
+mean_train_ns_sat: 0.3277
+mean_train_ns_clipped: 0.0207
+mean_train_ns_x_std: 0.0192
+mean_train_ns_q_exec_abs: 1.8118
+mean_train_ns_q_cmd_abs: 1.6126
+mean_train_ns_resid_after: 0.1910
+mean_test_reward: -0.1653
+mean_test_percentage_of_v_out_of_control: 0.2778
+mean_test_percentage_of_lower_than_lower_v: 0.0365
+mean_test_percentage_of_higher_than_upper_v: 0.2413
+mean_test_totally_controllable_ratio: 0.5293
+mean_test_average_voltage_deviation: 0.0441
+mean_test_average_voltage: 1.0323
+mean_test_max_voltage_drop_deviation: 0.0027
+mean_test_max_voltage_rise_deviation: 0.0244
+mean_test_total_line_loss: 2.6571
+mean_test_q_loss: 1.2123
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.3153
+mean_test_ns_hour: 9.9077
+mean_test_ns_load: 0.1255
+mean_test_ns_load_frac: 0.2092
+mean_test_ns_y: -0.0401
+mean_test_ns_sat: 0.1511
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0128
+mean_test_ns_q_exec_abs: 1.2123
+mean_test_ns_q_cmd_abs: 1.1514
+mean_test_ns_resid_after: 0.1255
+The model is saved!
+
+Episode terminated at time: 240 with return: -53.9510.
+Episode terminated at time: 240 with return: -46.7124.
+Episode terminated at time: 240 with return: -50.8608.
+Episode terminated at time: 240 with return: -43.8618.
+Episode terminated at time: 240 with return: -45.9242.
+Episode terminated at time: 240 with return: -57.7765.
+Episode terminated at time: 240 with return: -55.4961.
+Episode terminated at time: 240 with return: -44.1198.
+Episode terminated at time: 240 with return: -56.9887.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 165 with return: -231.4919.
+Episode terminated at time: 240 with return: -44.4666.
+Episode terminated at time: 240 with return: -44.3404.
+Episode terminated at time: 240 with return: -44.8260.
+Episode terminated at time: 240 with return: -47.6565.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 170 with return: -243.9626.
+Episode terminated at time: 240 with return: -56.0392.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 145 with return: -231.8465.
+Episode terminated at time: 240 with return: -44.7430.
+Episode terminated at time: 240 with return: -44.8002.
+Episode terminated at time: 240 with return: -54.9976.
+Episode terminated at time: 240 with return: -25.1903.
+Episode terminated at time: 240 with return: -26.3918.
+Episode terminated at time: 240 with return: -35.3848.
+Episode terminated at time: 240 with return: -28.1701.
+Episode terminated at time: 240 with return: -37.8615.
+Episode terminated at time: 240 with return: -45.3940.
+Episode terminated at time: 240 with return: -26.1589.
+Episode terminated at time: 240 with return: -36.2990.
+Episode terminated at time: 240 with return: -35.5105.
+Episode terminated at time: 240 with return: -26.4995.
+Episode terminated at time: 240 with return: -44.2390.
+Episode terminated at time: 240 with return: -56.0365.
+Episode terminated at time: 240 with return: -45.3167.
+Episode terminated at time: 240 with return: -52.1701.
+Episode terminated at time: 240 with return: -45.7432.
+Episode terminated at time: 240 with return: -53.8283.
+Episode terminated at time: 240 with return: -60.1803.
+Episode terminated at time: 240 with return: -57.4695.
+Episode terminated at time: 240 with return: -51.2534.
+Episode terminated at time: 240 with return: -55.1259.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 73 with return: -214.6233.
+Episode terminated at time: 240 with return: -45.0309.
+Episode terminated at time: 240 with return: -48.1891.
+Episode terminated at time: 240 with return: -54.8308.
+Episode terminated at time: 240 with return: -45.4275.
+Episode terminated at time: 240 with return: -49.6900.
+Episode terminated at time: 240 with return: -52.4091.
+Episode terminated at time: 240 with return: -44.2816.
+Episode terminated at time: 240 with return: -48.9676.
+Episode terminated at time: 240 with return: -53.2600.
+Episode terminated at time: 240 with return: -37.3746.
+Episode terminated at time: 240 with return: -41.1360.
+Episode terminated at time: 240 with return: -41.9480.
+Episode terminated at time: 240 with return: -28.8618.
+Episode terminated at time: 240 with return: -49.9918.
+Episode terminated at time: 240 with return: -42.4931.
+Episode terminated at time: 240 with return: -27.7681.
+Episode terminated at time: 240 with return: -48.9998.
+Episode terminated at time: 240 with return: -39.0592.
+Episode terminated at time: 240 with return: -39.0957.
+
+Episode: 160
+mean_train_value_grad_norm: 3.1319
+mean_train_value_loss: 1.8731
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.0254
+mean_train_policy_loss: 0.0488
+mean_train_reward: -0.2228
+mean_train_percentage_of_v_out_of_control: 0.4813
+mean_train_percentage_of_lower_than_lower_v: 0.0506
+mean_train_percentage_of_higher_than_upper_v: 0.4308
+mean_train_totally_controllable_ratio: 0.1925
+mean_train_average_voltage_deviation: 0.0597
+mean_train_average_voltage: 1.0462
+mean_train_max_voltage_drop_deviation: 0.0029
+mean_train_max_voltage_rise_deviation: 0.0487
+mean_train_total_line_loss: 3.8415
+mean_train_q_loss: 1.6315
+mean_train_destroy: 0.0000
+mean_train_ns_A: 0.5006
+mean_train_ns_hour: 11.1000
+mean_train_ns_load: 0.1892
+mean_train_ns_load_frac: 0.3154
+mean_train_ns_y: -0.0404
+mean_train_ns_sat: 0.2640
+mean_train_ns_clipped: 0.0348
+mean_train_ns_x_std: 0.0172
+mean_train_ns_q_exec_abs: 1.6315
+mean_train_ns_q_cmd_abs: 1.5184
+mean_train_ns_resid_after: 0.1876
+mean_test_reward: -0.1660
+mean_test_percentage_of_v_out_of_control: 0.3195
+mean_test_percentage_of_lower_than_lower_v: 0.0550
+mean_test_percentage_of_higher_than_upper_v: 0.2645
+mean_test_totally_controllable_ratio: 0.5372
+mean_test_average_voltage_deviation: 0.0483
+mean_test_average_voltage: 1.0299
+mean_test_max_voltage_drop_deviation: 0.0040
+mean_test_max_voltage_rise_deviation: 0.0320
+mean_test_total_line_loss: 3.1867
+mean_test_q_loss: 1.1769
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.3642
+mean_test_ns_hour: 13.1437
+mean_test_ns_load: 0.1530
+mean_test_ns_load_frac: 0.2549
+mean_test_ns_y: -0.0313
+mean_test_ns_sat: 0.2206
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0125
+mean_test_ns_q_exec_abs: 1.1769
+mean_test_ns_q_cmd_abs: 0.9628
+mean_test_ns_resid_after: 0.1530
+The model is saved!
+
+Episode terminated at time: 240 with return: -43.9525.
+Episode terminated at time: 240 with return: -45.3445.
+Episode terminated at time: 240 with return: -49.7686.
+Episode terminated at time: 240 with return: -46.5572.
+Episode terminated at time: 240 with return: -45.4671.
+Episode terminated at time: 240 with return: -45.0065.
+Episode terminated at time: 240 with return: -52.1629.
+Episode terminated at time: 240 with return: -48.3982.
+Episode terminated at time: 240 with return: -53.5372.
+Episode terminated at time: 240 with return: -55.3150.
+Episode terminated at time: 240 with return: -52.0531.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 183 with return: -235.6702.
+Episode terminated at time: 240 with return: -53.3968.
+Episode terminated at time: 240 with return: -44.1774.
+Episode terminated at time: 240 with return: -46.3764.
+Episode terminated at time: 240 with return: -51.9383.
+Episode terminated at time: 240 with return: -45.9629.
+Episode terminated at time: 240 with return: -46.9201.
+Episode terminated at time: 240 with return: -56.4328.
+Episode terminated at time: 240 with return: -45.4381.
+Episode terminated at time: 240 with return: -32.0167.
+Episode terminated at time: 240 with return: -32.3145.
+Episode terminated at time: 240 with return: -34.8136.
+Episode terminated at time: 240 with return: -33.2013.
+Episode terminated at time: 240 with return: -35.9775.
+Episode terminated at time: 240 with return: -42.3843.
+Episode terminated at time: 240 with return: -32.5587.
+Episode terminated at time: 240 with return: -33.7283.
+Episode terminated at time: 240 with return: -33.3014.
+Episode terminated at time: 240 with return: -34.3328.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 133 with return: -230.9382.
+Episode terminated at time: 240 with return: -54.4857.
+Episode terminated at time: 240 with return: -50.5107.
+Episode terminated at time: 240 with return: -54.4607.
+Episode terminated at time: 240 with return: -47.8375.
+Episode terminated at time: 240 with return: -53.4269.
+Episode terminated at time: 240 with return: -47.6261.
+Episode terminated at time: 240 with return: -57.8613.
+Episode terminated at time: 240 with return: -45.0108.
+Episode terminated at time: 240 with return: -44.8149.
+Episode terminated at time: 240 with return: -46.5523.
+Episode terminated at time: 240 with return: -45.1221.
+Episode terminated at time: 240 with return: -54.2155.
+Episode terminated at time: 240 with return: -55.3424.
+Episode terminated at time: 240 with return: -54.6220.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 218 with return: -241.0408.
+Episode terminated at time: 240 with return: -43.8858.
+Episode terminated at time: 240 with return: -55.9474.
+Episode terminated at time: 240 with return: -53.0608.
+Episode terminated at time: 240 with return: -53.8470.
+Episode terminated at time: 240 with return: -28.5955.
+Episode terminated at time: 240 with return: -30.0909.
+Episode terminated at time: 240 with return: -38.6859.
+Episode terminated at time: 240 with return: -29.4119.
+Episode terminated at time: 240 with return: -33.5414.
+Episode terminated at time: 240 with return: -29.2552.
+Episode terminated at time: 240 with return: -37.0437.
+Episode terminated at time: 240 with return: -27.4494.
+Episode terminated at time: 240 with return: -33.9543.
+Episode terminated at time: 240 with return: -29.4926.
+
+Episode: 200
+mean_train_value_grad_norm: 2.1971
+mean_train_value_loss: 1.8242
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.0580
+mean_train_policy_loss: 0.0349
+mean_train_reward: -0.2253
+mean_train_percentage_of_v_out_of_control: 0.3855
+mean_train_percentage_of_lower_than_lower_v: 0.0725
+mean_train_percentage_of_higher_than_upper_v: 0.3130
+mean_train_totally_controllable_ratio: 0.3933
+mean_train_average_voltage_deviation: 0.0549
+mean_train_average_voltage: 1.0334
+mean_train_max_voltage_drop_deviation: 0.0055
+mean_train_max_voltage_rise_deviation: 0.0423
+mean_train_total_line_loss: 4.2042
+mean_train_q_loss: 1.7036
+mean_train_destroy: 0.0000
+mean_train_ns_A: 0.4769
+mean_train_ns_hour: 9.6000
+mean_train_ns_load: 0.2032
+mean_train_ns_load_frac: 0.3387
+mean_train_ns_y: -0.0264
+mean_train_ns_sat: 0.3189
+mean_train_ns_clipped: 0.0272
+mean_train_ns_x_std: 0.0183
+mean_train_ns_q_exec_abs: 1.7036
+mean_train_ns_q_cmd_abs: 1.5212
+mean_train_ns_resid_after: 0.2023
+mean_test_reward: -0.1329
+mean_test_percentage_of_v_out_of_control: 0.0974
+mean_test_percentage_of_lower_than_lower_v: 0.0205
+mean_test_percentage_of_higher_than_upper_v: 0.0769
+mean_test_totally_controllable_ratio: 0.8690
+mean_test_average_voltage_deviation: 0.0239
+mean_test_average_voltage: 1.0096
+mean_test_max_voltage_drop_deviation: 0.0011
+mean_test_max_voltage_rise_deviation: 0.0079
+mean_test_total_line_loss: 1.6876
+mean_test_q_loss: 1.0900
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.1756
+mean_test_ns_hour: 11.7373
+mean_test_ns_load: 0.0685
+mean_test_ns_load_frac: 0.1142
+mean_test_ns_y: -0.0207
+mean_test_ns_sat: 0.0786
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0115
+mean_test_ns_q_exec_abs: 1.0900
+mean_test_ns_q_cmd_abs: 1.0571
+mean_test_ns_resid_after: 0.0685
+The model is saved!
+
+Episode terminated at time: 240 with return: -55.0309.
+Episode terminated at time: 240 with return: -52.6658.
+Episode terminated at time: 240 with return: -55.1722.
+Episode terminated at time: 240 with return: -44.2221.
+Episode terminated at time: 240 with return: -43.8488.
+Episode terminated at time: 240 with return: -49.2028.
+Episode terminated at time: 240 with return: -55.9221.
+Episode terminated at time: 240 with return: -53.5933.
+Episode terminated at time: 240 with return: -52.7601.
+Episode terminated at time: 240 with return: -47.9957.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 225 with return: -246.1322.
+Episode terminated at time: 240 with return: -56.5662.
+Episode terminated at time: 240 with return: -51.9900.
+Episode terminated at time: 240 with return: -57.7977.
+Episode terminated at time: 240 with return: -45.3755.
+Episode terminated at time: 240 with return: -44.4264.
+Episode terminated at time: 240 with return: -54.5843.
+Episode terminated at time: 240 with return: -49.7136.
+Episode terminated at time: 240 with return: -47.6976.
+Episode terminated at time: 240 with return: -49.3747.
+Episode terminated at time: 240 with return: -28.4523.
+Episode terminated at time: 240 with return: -29.0866.
+Episode terminated at time: 240 with return: -42.0702.
+Episode terminated at time: 240 with return: -27.2202.
+Episode terminated at time: 240 with return: -34.3681.
+Episode terminated at time: 240 with return: -38.9739.
+Episode terminated at time: 240 with return: -28.0339.
+Episode terminated at time: 240 with return: -27.0916.
+Episode terminated at time: 240 with return: -27.9757.
+Episode terminated at time: 240 with return: -32.2966.
+Episode terminated at time: 240 with return: -45.9636.
+Episode terminated at time: 240 with return: -53.8308.
+Episode terminated at time: 240 with return: -44.7918.
+Episode terminated at time: 240 with return: -53.6111.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 90 with return: -219.9109.
+Episode terminated at time: 240 with return: -47.5087.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 214 with return: -247.1770.
+Episode terminated at time: 240 with return: -44.3184.
+Episode terminated at time: 240 with return: -44.9542.
+Episode terminated at time: 240 with return: -54.6448.
+Episode terminated at time: 240 with return: -44.7179.
+Episode terminated at time: 240 with return: -44.6638.
+Episode terminated at time: 240 with return: -54.6694.
+Episode terminated at time: 240 with return: -54.4824.
+Episode terminated at time: 240 with return: -54.1808.
+Episode terminated at time: 240 with return: -54.1184.
+Episode terminated at time: 240 with return: -54.6459.
+Episode terminated at time: 240 with return: -55.1297.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 72 with return: -219.8472.
+Episode terminated at time: 240 with return: -44.5164.
+Episode terminated at time: 240 with return: -34.4519.
+Episode terminated at time: 240 with return: -46.3545.
+Episode terminated at time: 240 with return: -33.6664.
+Episode terminated at time: 240 with return: -30.7806.
+Episode terminated at time: 240 with return: -41.4693.
+Episode terminated at time: 240 with return: -45.8419.
+Episode terminated at time: 240 with return: -30.6507.
+Episode terminated at time: 240 with return: -36.8731.
+Episode terminated at time: 240 with return: -35.8185.
+Episode terminated at time: 240 with return: -38.8309.
+
+Episode: 240
+mean_train_value_grad_norm: 4.7955
+mean_train_value_loss: 2.7133
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.0345
+mean_train_policy_loss: 0.0524
+mean_train_reward: -0.1863
+mean_train_percentage_of_v_out_of_control: 0.1430
+mean_train_percentage_of_lower_than_lower_v: 0.1204
+mean_train_percentage_of_higher_than_upper_v: 0.0225
+mean_train_totally_controllable_ratio: 0.5439
+mean_train_average_voltage_deviation: 0.0268
+mean_train_average_voltage: 0.9856
+mean_train_max_voltage_drop_deviation: 0.0101
+mean_train_max_voltage_rise_deviation: 0.0017
+mean_train_total_line_loss: 1.3586
+mean_train_q_loss: 1.5946
+mean_train_destroy: 0.0000
+mean_train_ns_A: 0.0086
+mean_train_ns_hour: 10.2356
+mean_train_ns_load: 0.0031
+mean_train_ns_load_frac: 0.0052
+mean_train_ns_y: -0.0027
+mean_train_ns_sat: 0.0000
+mean_train_ns_clipped: 0.0000
+mean_train_ns_x_std: 0.0160
+mean_train_ns_q_exec_abs: 1.5946
+mean_train_ns_q_cmd_abs: 1.5964
+mean_train_ns_resid_after: 0.0031
+mean_test_reward: -0.1568
+mean_test_percentage_of_v_out_of_control: 0.2926
+mean_test_percentage_of_lower_than_lower_v: 0.0463
+mean_test_percentage_of_higher_than_upper_v: 0.2463
+mean_test_totally_controllable_ratio: 0.5749
+mean_test_average_voltage_deviation: 0.0447
+mean_test_average_voltage: 1.0287
+mean_test_max_voltage_drop_deviation: 0.0025
+mean_test_max_voltage_rise_deviation: 0.0279
+mean_test_total_line_loss: 2.7794
+mean_test_q_loss: 1.1212
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.3533
+mean_test_ns_hour: 10.9247
+mean_test_ns_load: 0.1384
+mean_test_ns_load_frac: 0.2306
+mean_test_ns_y: -0.0368
+mean_test_ns_sat: 0.1737
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0119
+mean_test_ns_q_exec_abs: 1.1212
+mean_test_ns_q_cmd_abs: 1.0138
+mean_test_ns_resid_after: 0.1384
+The model is saved!
+
+Episode terminated at time: 240 with return: -46.4583.
+Episode terminated at time: 240 with return: -49.8694.
+Episode terminated at time: 240 with return: -46.3470.
+Episode terminated at time: 240 with return: -54.8986.
+Episode terminated at time: 240 with return: -52.0447.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 212 with return: -238.4506.
+Episode terminated at time: 240 with return: -54.5516.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 17 with return: -204.0535.
+Episode terminated at time: 240 with return: -52.2814.
+Episode terminated at time: 240 with return: -48.1044.
+Episode terminated at time: 240 with return: -47.4361.
+Episode terminated at time: 240 with return: -48.5089.
+Episode terminated at time: 240 with return: -44.9721.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 213 with return: -248.5629.
+Episode terminated at time: 240 with return: -53.4577.
+Episode terminated at time: 240 with return: -52.1353.
+Episode terminated at time: 240 with return: -44.5934.
+Episode terminated at time: 240 with return: -46.5500.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 113 with return: -222.7172.
+Episode terminated at time: 240 with return: -56.6084.
+Episode terminated at time: 240 with return: -39.5201.
+Episode terminated at time: 240 with return: -30.6043.
+Episode terminated at time: 240 with return: -29.2885.
+Episode terminated at time: 240 with return: -30.9439.
+Episode terminated at time: 240 with return: -29.3562.
+Episode terminated at time: 240 with return: -29.6144.
+Episode terminated at time: 240 with return: -28.1004.
+Episode terminated at time: 240 with return: -42.0435.
+Episode terminated at time: 240 with return: -32.1498.
+Episode terminated at time: 240 with return: -28.5152.
+Episode terminated at time: 240 with return: -51.6189.
+Episode terminated at time: 240 with return: -45.1219.
+Episode terminated at time: 240 with return: -45.6726.
+Episode terminated at time: 240 with return: -54.3787.
+Episode terminated at time: 240 with return: -53.0084.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 207 with return: -242.2574.
+Episode terminated at time: 240 with return: -44.8952.
+Episode terminated at time: 240 with return: -50.9923.
+Episode terminated at time: 240 with return: -53.0541.
+Episode terminated at time: 240 with return: -47.7097.
+Episode terminated at time: 240 with return: -44.0778.
+Episode terminated at time: 240 with return: -45.6122.
+Episode terminated at time: 240 with return: -45.2196.
+Episode terminated at time: 240 with return: -47.4296.
+Episode terminated at time: 240 with return: -55.5728.
+Episode terminated at time: 240 with return: -55.2901.
+Episode terminated at time: 240 with return: -48.1482.
+Episode terminated at time: 240 with return: -44.5833.
+Episode terminated at time: 240 with return: -46.7483.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 153 with return: -230.5556.
+Episode terminated at time: 240 with return: -41.0511.
+Episode terminated at time: 240 with return: -35.4674.
+Episode terminated at time: 240 with return: -38.0016.
+Episode terminated at time: 240 with return: -41.0075.
+Episode terminated at time: 240 with return: -30.4158.
+Episode terminated at time: 240 with return: -34.6637.
+Episode terminated at time: 240 with return: -37.2395.
+Episode terminated at time: 240 with return: -30.5275.
+Episode terminated at time: 240 with return: -34.3288.
+Episode terminated at time: 240 with return: -32.4770.
+
+Episode: 280
+mean_train_value_grad_norm: 1.6173
+mean_train_value_loss: 2.0274
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.0358
+mean_train_policy_loss: 0.0467
+mean_train_reward: -1.5168
+mean_train_percentage_of_v_out_of_control: 0.2664
+mean_train_percentage_of_lower_than_lower_v: 0.2424
+mean_train_percentage_of_higher_than_upper_v: 0.0240
+mean_train_totally_controllable_ratio: 0.4145
+mean_train_average_voltage_deviation: 0.0410
+mean_train_average_voltage: 0.9717
+mean_train_max_voltage_drop_deviation: 0.0278
+mean_train_max_voltage_rise_deviation: 0.0027
+mean_train_total_line_loss: 2.2881
+mean_train_q_loss: 1.6041
+mean_train_destroy: 0.0066
+mean_train_ns_A: 0.2754
+mean_train_ns_hour: 7.2750
+mean_train_ns_load: 0.1009
+mean_train_ns_load_frac: 0.1682
+mean_train_ns_y: -0.0353
+mean_train_ns_sat: 0.1112
+mean_train_ns_clipped: 0.0036
+mean_train_ns_x_std: 0.0163
+mean_train_ns_q_exec_abs: 1.6041
+mean_train_ns_q_cmd_abs: 1.5856
+mean_train_ns_resid_after: 0.1008
+mean_test_reward: -0.1486
+mean_test_percentage_of_v_out_of_control: 0.2212
+mean_test_percentage_of_lower_than_lower_v: 0.0376
+mean_test_percentage_of_higher_than_upper_v: 0.1836
+mean_test_totally_controllable_ratio: 0.6619
+mean_test_average_voltage_deviation: 0.0353
+mean_test_average_voltage: 1.0211
+mean_test_max_voltage_drop_deviation: 0.0014
+mean_test_max_voltage_rise_deviation: 0.0186
+mean_test_total_line_loss: 2.1081
+mean_test_q_loss: 1.1327
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.3359
+mean_test_ns_hour: 11.1733
+mean_test_ns_load: 0.1297
+mean_test_ns_load_frac: 0.2162
+mean_test_ns_y: -0.0434
+mean_test_ns_sat: 0.1385
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0119
+mean_test_ns_q_exec_abs: 1.1327
+mean_test_ns_q_cmd_abs: 1.1036
+mean_test_ns_resid_after: 0.1297
+The model is saved!
+
+Episode terminated at time: 240 with return: -54.8840.
+Episode terminated at time: 240 with return: -44.8643.
+Episode terminated at time: 240 with return: -44.8571.
+Episode terminated at time: 240 with return: -45.1133.
+Episode terminated at time: 240 with return: -47.4952.
+Episode terminated at time: 240 with return: -54.6965.
+Episode terminated at time: 240 with return: -54.8400.
+Episode terminated at time: 240 with return: -47.2654.
+Episode terminated at time: 240 with return: -54.3216.
+Episode terminated at time: 240 with return: -44.8782.
+Episode terminated at time: 240 with return: -44.7875.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 66 with return: -215.4409.
+Episode terminated at time: 240 with return: -43.8655.
+Episode terminated at time: 240 with return: -51.1003.
+Episode terminated at time: 240 with return: -45.8202.
+Episode terminated at time: 240 with return: -57.1665.
+Episode terminated at time: 240 with return: -47.3183.
+Episode terminated at time: 240 with return: -53.8405.
+Episode terminated at time: 240 with return: -45.8747.
+Episode terminated at time: 240 with return: -54.7337.
+Episode terminated at time: 240 with return: -32.2568.
+Episode terminated at time: 240 with return: -34.6601.
+Episode terminated at time: 240 with return: -36.9803.
+Episode terminated at time: 240 with return: -32.3076.
+Episode terminated at time: 240 with return: -33.0667.
+Episode terminated at time: 240 with return: -32.1636.
+Episode terminated at time: 240 with return: -38.6131.
+Episode terminated at time: 240 with return: -37.8782.
+Episode terminated at time: 240 with return: -32.9586.
+Episode terminated at time: 240 with return: -36.5964.
+Episode terminated at time: 240 with return: -48.6327.
+Episode terminated at time: 240 with return: -45.0378.
+Episode terminated at time: 240 with return: -46.5206.
+Episode terminated at time: 240 with return: -48.6231.
+Episode terminated at time: 240 with return: -44.4603.
+Episode terminated at time: 240 with return: -51.7133.
+Episode terminated at time: 240 with return: -49.8896.
+Episode terminated at time: 240 with return: -47.5297.
+Episode terminated at time: 240 with return: -54.6980.
+Episode terminated at time: 240 with return: -53.8757.
+Episode terminated at time: 240 with return: -44.3983.
+Episode terminated at time: 240 with return: -50.8625.
+Episode terminated at time: 240 with return: -54.3310.
+Episode terminated at time: 240 with return: -52.2090.
+Episode terminated at time: 240 with return: -55.3816.
+Episode terminated at time: 240 with return: -44.4325.
+Episode terminated at time: 240 with return: -44.9685.
+Episode terminated at time: 240 with return: -44.6784.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 69 with return: -218.7191.
+Episode terminated at time: 240 with return: -44.2582.
+Episode terminated at time: 240 with return: -32.0376.
+Episode terminated at time: 240 with return: -31.8908.
+Episode terminated at time: 240 with return: -35.8253.
+Episode terminated at time: 240 with return: -42.3864.
+Episode terminated at time: 240 with return: -34.9474.
+Episode terminated at time: 240 with return: -37.5525.
+Episode terminated at time: 240 with return: -32.3803.
+Episode terminated at time: 240 with return: -36.4348.
+Episode terminated at time: 240 with return: -37.7691.
+Episode terminated at time: 240 with return: -35.3932.
+
+Episode: 320
+mean_train_value_grad_norm: 3.9986
+mean_train_value_loss: 1.9038
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.0402
+mean_train_policy_loss: 0.0455
+mean_train_reward: -0.1852
+mean_train_percentage_of_v_out_of_control: 0.1280
+mean_train_percentage_of_lower_than_lower_v: 0.1093
+mean_train_percentage_of_higher_than_upper_v: 0.0187
+mean_train_totally_controllable_ratio: 0.5439
+mean_train_average_voltage_deviation: 0.0248
+mean_train_average_voltage: 0.9886
+mean_train_max_voltage_drop_deviation: 0.0077
+mean_train_max_voltage_rise_deviation: 0.0019
+mean_train_total_line_loss: 1.3529
+mean_train_q_loss: 1.6041
+mean_train_destroy: 0.0000
+mean_train_ns_A: 0.0425
+mean_train_ns_hour: 8.9751
+mean_train_ns_load: 0.0111
+mean_train_ns_load_frac: 0.0186
+mean_train_ns_y: -0.0091
+mean_train_ns_sat: 0.0000
+mean_train_ns_clipped: 0.0000
+mean_train_ns_x_std: 0.0162
+mean_train_ns_q_exec_abs: 1.6041
+mean_train_ns_q_cmd_abs: 1.6158
+mean_train_ns_resid_after: 0.0111
+mean_test_reward: -0.1492
+mean_test_percentage_of_v_out_of_control: 0.2123
+mean_test_percentage_of_lower_than_lower_v: 0.0744
+mean_test_percentage_of_higher_than_upper_v: 0.1380
+mean_test_totally_controllable_ratio: 0.6983
+mean_test_average_voltage_deviation: 0.0332
+mean_test_average_voltage: 1.0092
+mean_test_max_voltage_drop_deviation: 0.0047
+mean_test_max_voltage_rise_deviation: 0.0130
+mean_test_total_line_loss: 2.0882
+mean_test_q_loss: 1.1606
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.3297
+mean_test_ns_hour: 12.0956
+mean_test_ns_load: 0.1295
+mean_test_ns_load_frac: 0.2159
+mean_test_ns_y: -0.0416
+mean_test_ns_sat: 0.1409
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0123
+mean_test_ns_q_exec_abs: 1.1606
+mean_test_ns_q_cmd_abs: 1.1238
+mean_test_ns_resid_after: 0.1295
+The model is saved!
+
+Episode terminated at time: 240 with return: -51.3279.
+Episode terminated at time: 240 with return: -54.7555.
+Episode terminated at time: 240 with return: -45.9048.
+Episode terminated at time: 240 with return: -48.0664.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 47 with return: -209.8766.
+Episode terminated at time: 240 with return: -51.8231.
+Episode terminated at time: 240 with return: -48.2488.
+Episode terminated at time: 240 with return: -51.6409.
+Episode terminated at time: 240 with return: -54.8946.
+Episode terminated at time: 240 with return: -44.9173.
+Episode terminated at time: 240 with return: -48.9938.
+Episode terminated at time: 240 with return: -50.4116.
+Episode terminated at time: 240 with return: -54.6352.
+Episode terminated at time: 240 with return: -46.0862.
+Episode terminated at time: 240 with return: -54.9538.
+Episode terminated at time: 240 with return: -44.7806.
+Episode terminated at time: 240 with return: -44.7825.
+Episode terminated at time: 240 with return: -45.6074.
+Episode terminated at time: 240 with return: -56.1144.
+Episode terminated at time: 240 with return: -56.0334.
+Episode terminated at time: 240 with return: -30.4146.
+Episode terminated at time: 240 with return: -31.0439.
+Episode terminated at time: 240 with return: -29.3120.
+Episode terminated at time: 240 with return: -35.6829.
+Episode terminated at time: 240 with return: -38.5033.
+Episode terminated at time: 240 with return: -36.0167.
+Episode terminated at time: 240 with return: -35.0996.
+Episode terminated at time: 240 with return: -37.9909.
+Episode terminated at time: 240 with return: -34.3951.
+Episode terminated at time: 240 with return: -36.1735.
+Episode terminated at time: 240 with return: -55.9695.
+Episode terminated at time: 240 with return: -54.8559.
+Episode terminated at time: 240 with return: -53.4592.
+Episode terminated at time: 240 with return: -49.5786.
+Episode terminated at time: 240 with return: -54.8310.
+Episode terminated at time: 240 with return: -43.9778.
+Episode terminated at time: 240 with return: -45.0607.
+Episode terminated at time: 240 with return: -56.6810.
+Episode terminated at time: 240 with return: -53.9367.
+Episode terminated at time: 240 with return: -45.0878.
+Episode terminated at time: 240 with return: -53.8679.
+Episode terminated at time: 240 with return: -45.0601.
+Episode terminated at time: 240 with return: -52.4067.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 220 with return: -245.6570.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 124 with return: -231.7665.
+Episode terminated at time: 240 with return: -45.3545.
+Episode terminated at time: 240 with return: -45.3104.
+Episode terminated at time: 240 with return: -54.2674.
+Episode terminated at time: 240 with return: -46.2429.
+Episode terminated at time: 240 with return: -44.9696.
+Episode terminated at time: 240 with return: -31.0322.
+Episode terminated at time: 240 with return: -35.4331.
+Episode terminated at time: 240 with return: -32.6512.
+Episode terminated at time: 240 with return: -39.8904.
+Episode terminated at time: 240 with return: -34.9854.
+Episode terminated at time: 240 with return: -35.7490.
+Episode terminated at time: 240 with return: -35.1301.
+Episode terminated at time: 240 with return: -35.0113.
+Episode terminated at time: 240 with return: -32.1624.
+Episode terminated at time: 240 with return: -32.3866.
+
+Episode: 360
+mean_train_value_grad_norm: 1.9859
+mean_train_value_loss: 2.0352
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.0403
+mean_train_policy_loss: 0.0518
+mean_train_reward: -0.1882
+mean_train_percentage_of_v_out_of_control: 0.1548
+mean_train_percentage_of_lower_than_lower_v: 0.1445
+mean_train_percentage_of_higher_than_upper_v: 0.0103
+mean_train_totally_controllable_ratio: 0.5188
+mean_train_average_voltage_deviation: 0.0274
+mean_train_average_voltage: 0.9808
+mean_train_max_voltage_drop_deviation: 0.0118
+mean_train_max_voltage_rise_deviation: 0.0009
+mean_train_total_line_loss: 1.3824
+mean_train_q_loss: 1.6077
+mean_train_destroy: 0.0000
+mean_train_ns_A: 0.0009
+mean_train_ns_hour: 11.1431
+mean_train_ns_load: 0.0002
+mean_train_ns_load_frac: 0.0004
+mean_train_ns_y: -0.0002
+mean_train_ns_sat: 0.0000
+mean_train_ns_clipped: 0.0000
+mean_train_ns_x_std: 0.0157
+mean_train_ns_q_exec_abs: 1.6077
+mean_train_ns_q_cmd_abs: 1.6078
+mean_train_ns_resid_after: 0.0002
+mean_test_reward: -0.1441
+mean_test_percentage_of_v_out_of_control: 0.1622
+mean_test_percentage_of_lower_than_lower_v: 0.0820
+mean_test_percentage_of_higher_than_upper_v: 0.0801
+mean_test_totally_controllable_ratio: 0.7025
+mean_test_average_voltage_deviation: 0.0292
+mean_test_average_voltage: 1.0046
+mean_test_max_voltage_drop_deviation: 0.0061
+mean_test_max_voltage_rise_deviation: 0.0063
+mean_test_total_line_loss: 1.8520
+mean_test_q_loss: 1.1487
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.2536
+mean_test_ns_hour: 11.2779
+mean_test_ns_load: 0.0983
+mean_test_ns_load_frac: 0.1638
+mean_test_ns_y: -0.0361
+mean_test_ns_sat: 0.0989
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0122
+mean_test_ns_q_exec_abs: 1.1487
+mean_test_ns_q_cmd_abs: 1.1513
+mean_test_ns_resid_after: 0.0983
+The model is saved!
+
+Episode terminated at time: 240 with return: -51.5123.
+Episode terminated at time: 240 with return: -46.7139.
+Episode terminated at time: 240 with return: -55.0253.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 29 with return: -207.5638.
+Episode terminated at time: 240 with return: -46.3411.
+Episode terminated at time: 240 with return: -45.0526.
+Episode terminated at time: 240 with return: -45.7463.
+Episode terminated at time: 240 with return: -48.7626.
+Episode terminated at time: 240 with return: -54.7985.
+Episode terminated at time: 240 with return: -46.0044.
+Episode terminated at time: 240 with return: -44.2070.
+Episode terminated at time: 240 with return: -53.0870.
+Episode terminated at time: 240 with return: -47.1330.
+Episode terminated at time: 240 with return: -54.3394.
+Episode terminated at time: 240 with return: -54.3500.
+Episode terminated at time: 240 with return: -44.0008.
+Episode terminated at time: 240 with return: -49.1822.
+Episode terminated at time: 240 with return: -44.7936.
+Episode terminated at time: 240 with return: -45.1630.
+Episode terminated at time: 240 with return: -54.7780.
+Episode terminated at time: 240 with return: -32.9969.
+Episode terminated at time: 240 with return: -30.6396.
+Episode terminated at time: 240 with return: -42.0199.
+Episode terminated at time: 240 with return: -34.7135.
+Episode terminated at time: 240 with return: -47.2081.
+Episode terminated at time: 240 with return: -31.0374.
+Episode terminated at time: 240 with return: -32.8267.
+Episode terminated at time: 240 with return: -30.0262.
+Episode terminated at time: 240 with return: -37.8973.
+Episode terminated at time: 240 with return: -29.9235.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 23 with return: -205.3787.
+Episode terminated at time: 240 with return: -54.4961.
+Episode terminated at time: 240 with return: -53.6038.
+Episode terminated at time: 240 with return: -51.6855.
+Episode terminated at time: 240 with return: -46.5403.
+Episode terminated at time: 240 with return: -54.7119.
+Episode terminated at time: 240 with return: -51.7839.
+Episode terminated at time: 240 with return: -44.8036.
+Episode terminated at time: 240 with return: -44.5759.
+Episode terminated at time: 240 with return: -44.7002.
+Episode terminated at time: 240 with return: -51.8612.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 104 with return: -219.7421.
+Episode terminated at time: 240 with return: -55.2999.
+Episode terminated at time: 240 with return: -54.4814.
+The power flow for the reactive power penetration cannot be solved.
+Episode terminated at time: 233 with return: -243.7287.
+Episode terminated at time: 240 with return: -53.9756.
+Episode terminated at time: 240 with return: -55.5458.
+Episode terminated at time: 240 with return: -45.8455.
+Episode terminated at time: 240 with return: -43.3045.
+Episode terminated at time: 240 with return: -44.5447.
+Episode terminated at time: 240 with return: -40.3404.
+Episode terminated at time: 240 with return: -33.1533.
+Episode terminated at time: 240 with return: -32.4575.
+Episode terminated at time: 240 with return: -36.8143.
+Episode terminated at time: 240 with return: -31.5262.
+Episode terminated at time: 240 with return: -30.8053.
+Episode terminated at time: 240 with return: -34.5950.
+Episode terminated at time: 240 with return: -35.5013.
+Episode terminated at time: 240 with return: -37.4198.
+Episode terminated at time: 240 with return: -41.5674.
+
+Episode: 400
+mean_train_value_grad_norm: 2.5691
+mean_train_value_loss: 2.0666
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.0430
+mean_train_policy_loss: 0.0404
+mean_train_reward: -0.1864
+mean_train_percentage_of_v_out_of_control: 0.1482
+mean_train_percentage_of_lower_than_lower_v: 0.1325
+mean_train_percentage_of_higher_than_upper_v: 0.0157
+mean_train_totally_controllable_ratio: 0.5314
+mean_train_average_voltage_deviation: 0.0276
+mean_train_average_voltage: 0.9846
+mean_train_max_voltage_drop_deviation: 0.0115
+mean_train_max_voltage_rise_deviation: 0.0013
+mean_train_total_line_loss: 1.3991
+mean_train_q_loss: 1.5881
+mean_train_destroy: 0.0000
+mean_train_ns_A: 0.0034
+mean_train_ns_hour: 13.2103
+mean_train_ns_load: 0.0010
+mean_train_ns_load_frac: 0.0017
+mean_train_ns_y: -0.0006
+mean_train_ns_sat: 0.0000
+mean_train_ns_clipped: 0.0000
+mean_train_ns_x_std: 0.0161
+mean_train_ns_q_exec_abs: 1.5881
+mean_train_ns_q_cmd_abs: 1.5886
+mean_train_ns_resid_after: 0.0010
+mean_test_reward: -0.1482
+mean_test_percentage_of_v_out_of_control: 0.2085
+mean_test_percentage_of_lower_than_lower_v: 0.0259
+mean_test_percentage_of_higher_than_upper_v: 0.1826
+mean_test_totally_controllable_ratio: 0.6661
+mean_test_average_voltage_deviation: 0.0337
+mean_test_average_voltage: 1.0229
+mean_test_max_voltage_drop_deviation: 0.0014
+mean_test_max_voltage_rise_deviation: 0.0181
+mean_test_total_line_loss: 2.0476
+mean_test_q_loss: 1.1454
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.2981
+mean_test_ns_hour: 12.2092
+mean_test_ns_load: 0.1168
+mean_test_ns_load_frac: 0.1946
+mean_test_ns_y: -0.0399
+mean_test_ns_sat: 0.1215
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0120
+mean_test_ns_q_exec_abs: 1.1454
+mean_test_ns_q_cmd_abs: 1.1299
+mean_test_ns_resid_after: 0.1168
+The model is saved!
+
+ns layer: agent-steps seen 3130446, disturbed 1581360 (sigma=3.0, coupled)

@@ -1,0 +1,1465 @@
+==============================================================================
+mapdn_ns launcher  script=train alg=matd3 arm=pact sigma=3 direct=False seed=0 scenario=case141_3min_final barrier=l1
+log_name           var_voltage_control-case141_3min_final-distributed-matd3-l1-paper-pact-s3-seed0
+debug csv          runs/ns_logs/var_voltage_control-case141_3min_final-distributed-matd3-l1-paper-pact-s3-seed0/pact_debug.csv
+==============================================================================
+This is the s_max: 
+[ 4.06710828  4.06710828  9.39838018  9.39838018  1.48406276 10.04474004
+ 10.04474004  2.13486849  2.13486849  2.13486849  2.13486849  0.87463775
+  0.87463775  0.87463775  5.76713732  5.76713732 12.35333912 12.35333912
+  1.40215631  1.40215631  1.40215631  1.40215631]
+PACT gate 1/3   channels == definition to 2.79e-09; N=1 reads exactly zero on all 3 channels
+PACT            enabled=True arm=pact trust=0.9 mu=0.98 channels=full known_driver=False dims=[4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4] warmup=40 corr_clip=0.6 channel=EXACT INVERSE (II.6 row 1)
+feeder          case141_3min_final: 140 elements, 22 inverters, V_base=12.5 kV
+                classes {'heavy': 47, 'medium': 47, 'light': 46}  (conductor size: tercile of r_ohm_per_km (heavy trunk / medium / light lateral))
+                path lengths [5, 7, 8, 13, 18, 16, 22, 17, 16, 20, 16, 12, 15, 14, 15, 14, 27, 18, 18, 23, 25, 31]
+                s_rated (MVA) [4.067, 4.067, 9.398, 9.398, 1.484, 10.045, 10.045, 2.135, 2.135, 2.135, 2.135, 0.875, 0.875, 0.875, 5.767, 5.767, 12.353, 12.353, 1.402, 1.402, 1.402, 1.402]
+coupling        N=22 r=3 classes=['heavy', 'medium', 'light']
+                send (unknown) [1.8, 1.0, 0.2]
+                W (MVAr/MVAr @ sigma=1, A=1): mean 0.0322 max 0.2131 spread 1.185 asym 0.444 zero-pairs 0%
+                k_slope=7.333 q_sat=0.44 rho=0.0
+                loop gain rho(W)=0.675 at sigma=1 -> the fleet hunts at noon for sigma > 1.48
+ns layer        sigma=3.0 driver=solar day=[6,18) N=22 D_ref=0.105 of the VAR range obs+=(residual=True, channels=True, driver=False) channel=COUPLED (C)
+GenericDict(gumbel_softmax=False, epsilon_softmax=False, softmax_eps=None, episodic=False, cuda=True, grad_clip_eps=1.0, save_model_freq=40, replay_warmup=0, policy_lrate=0.0001, value_lrate=0.0001, mixer_lrate=None, target=True, target_lr=0.1, entr=0.001, max_steps=240, batch_size=32, replay=True, replay_buffer_size=5000.0, agent_type='rnn', agent_id=True, shared_params=True, layernorm=True, mixer=False, gaussian_policy=False, LOG_STD_MIN=0.0, LOG_STD_MAX=0.5, fixed_policy_std=1.0, hid_activation='relu', init_type='normal', init_std=0.1, action_enforcebound=True, double_q=True, clip_c=1.0, gamma=0.99, hid_size=64, continuous=True, normalize_advantages=False, train_episodes_num=400, behaviour_update_freq=60, target_update_freq=120, policy_update_epochs=1, value_update_epochs=10, mixer_update_epochs=None, reward_normalisation=True, eval_freq=20, num_eval_episodes=10, action_scale=0.6, action_bias=0.0, agent_num=22, obs_size=102, action_dim=1)
+
+Episode terminated at time: 240 with return: -44.4009.
+Episode terminated at time: 240 with return: -22.5838.
+Episode terminated at time: 240 with return: -15.8984.
+Episode terminated at time: 240 with return: -15.4944.
+Episode terminated at time: 240 with return: -18.8228.
+Episode terminated at time: 240 with return: -14.9417.
+Episode terminated at time: 240 with return: -19.2418.
+Episode terminated at time: 240 with return: -19.4021.
+Episode terminated at time: 240 with return: -26.9005.
+Episode terminated at time: 240 with return: -17.9954.
+Episode terminated at time: 240 with return: -27.4929.
+Episode terminated at time: 240 with return: -50.0059.
+Episode terminated at time: 240 with return: -48.0316.
+Episode terminated at time: 240 with return: -46.2587.
+Episode terminated at time: 240 with return: -45.9159.
+Episode terminated at time: 240 with return: -47.0890.
+Episode terminated at time: 240 with return: -50.8020.
+Episode terminated at time: 240 with return: -57.0207.
+Episode terminated at time: 240 with return: -54.3787.
+Episode terminated at time: 240 with return: -65.7797.
+Episode terminated at time: 240 with return: -54.5950.
+Episode terminated at time: 240 with return: -60.0045.
+Episode terminated at time: 240 with return: -69.7057.
+Episode terminated at time: 240 with return: -71.1117.
+Episode terminated at time: 240 with return: -72.2766.
+Episode terminated at time: 240 with return: -64.8874.
+Episode terminated at time: 240 with return: -67.2588.
+Episode terminated at time: 240 with return: -66.8381.
+Episode terminated at time: 240 with return: -69.9798.
+Episode terminated at time: 240 with return: -70.8375.
+Episode terminated at time: 240 with return: -77.8312.
+Episode terminated at time: 240 with return: -77.5525.
+Episode terminated at time: 240 with return: -81.5437.
+Episode terminated at time: 240 with return: -68.1371.
+Episode terminated at time: 240 with return: -76.2034.
+Episode terminated at time: 240 with return: -70.1334.
+Episode terminated at time: 240 with return: -83.5459.
+Episode terminated at time: 240 with return: -76.4546.
+Episode terminated at time: 240 with return: -75.4207.
+Episode terminated at time: 240 with return: -83.2930.
+Episode terminated at time: 240 with return: -67.8154.
+Episode terminated at time: 240 with return: -59.8006.
+Episode terminated at time: 240 with return: -69.3762.
+Episode terminated at time: 240 with return: -69.2707.
+Episode terminated at time: 240 with return: -56.4524.
+Episode terminated at time: 240 with return: -60.6805.
+Episode terminated at time: 240 with return: -64.9963.
+Episode terminated at time: 240 with return: -55.3595.
+Episode terminated at time: 240 with return: -53.6970.
+Episode terminated at time: 240 with return: -58.9501.
+Episode terminated at time: 240 with return: -47.7470.
+Episode terminated at time: 240 with return: -48.5425.
+Episode terminated at time: 240 with return: -47.0230.
+Episode terminated at time: 240 with return: -49.4259.
+Episode terminated at time: 240 with return: -45.8333.
+Episode terminated at time: 240 with return: -52.0015.
+Episode terminated at time: 240 with return: -45.8646.
+Episode terminated at time: 240 with return: -49.7612.
+Episode terminated at time: 240 with return: -47.9928.
+Episode terminated at time: 240 with return: -49.6328.
+Episode terminated at time: 240 with return: -42.6899.
+Episode terminated at time: 240 with return: -39.2162.
+Episode terminated at time: 240 with return: -39.5259.
+Episode terminated at time: 240 with return: -42.2341.
+Episode terminated at time: 240 with return: -39.9850.
+Episode terminated at time: 240 with return: -41.1159.
+Episode terminated at time: 240 with return: -40.4856.
+Episode terminated at time: 240 with return: -41.5812.
+Episode terminated at time: 240 with return: -39.6833.
+Episode terminated at time: 240 with return: -41.3734.
+
+Episode: 40
+mean_train_value_grad_norm: 2.4305
+mean_train_value_loss: 0.8548
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.0235
+mean_train_policy_loss: -0.0172
+mean_train_reward: -0.2077
+mean_train_percentage_of_v_out_of_control: 0.3762
+mean_train_percentage_of_lower_than_lower_v: 0.1430
+mean_train_percentage_of_higher_than_upper_v: 0.2333
+mean_train_totally_controllable_ratio: 0.2678
+mean_train_average_voltage_deviation: 0.0461
+mean_train_average_voltage: 1.0100
+mean_train_max_voltage_drop_deviation: 0.0129
+mean_train_max_voltage_rise_deviation: 0.0239
+mean_train_total_line_loss: 2.1298
+mean_train_q_loss: 1.6157
+mean_train_destroy: 0.0000
+mean_train_ns_A: 0.4288
+mean_train_ns_hour: 15.5500
+mean_train_ns_load: 0.1174
+mean_train_ns_load_frac: 0.1957
+mean_train_ns_y: -0.0676
+mean_train_ns_sat: 0.0824
+mean_train_ns_clipped: 0.0000
+mean_train_ns_x_std: 0.0161
+mean_train_ns_q_exec_abs: 1.6157
+mean_train_ns_q_cmd_abs: 1.6176
+mean_train_ns_resid_after: 0.0803
+mean_train_pact_trust_pol: 0.9000
+mean_train_pact_trust_app: 0.8928
+mean_train_pact_conf: 0.9919
+mean_train_pact_pred_err: 0.0810
+mean_train_pact_corr_abs: 0.0991
+mean_train_pact_fit_gain: 0.5481
+mean_train_pact_cond_psi: 1716.1091
+mean_train_pact_beta_cos: 0.4981
+mean_train_pact_beta_relerr: 6.9429
+mean_train_pact_updates: 14161.0000
+mean_train_pact_skipped: 0.0000
+mean_train_pact_bounded: 13899.0000
+mean_train_pact_diverged: 0.0000
+mean_train_pact_resets: 0.0000
+mean_test_reward: -0.1707
+mean_test_percentage_of_v_out_of_control: 0.4263
+mean_test_percentage_of_lower_than_lower_v: 0.2728
+mean_test_percentage_of_higher_than_upper_v: 0.1535
+mean_test_totally_controllable_ratio: 0.2448
+mean_test_average_voltage_deviation: 0.0512
+mean_test_average_voltage: 0.9877
+mean_test_max_voltage_drop_deviation: 0.0247
+mean_test_max_voltage_rise_deviation: 0.0141
+mean_test_total_line_loss: 2.3486
+mean_test_q_loss: 1.1950
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.1450
+mean_test_ns_hour: 11.4186
+mean_test_ns_load: 0.0332
+mean_test_ns_load_frac: 0.0553
+mean_test_ns_y: -0.0284
+mean_test_ns_sat: 0.0029
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0120
+mean_test_ns_q_exec_abs: 1.1950
+mean_test_ns_q_cmd_abs: 1.1993
+mean_test_ns_resid_after: 0.0259
+mean_test_pact_trust_pol: 0.9000
+mean_test_pact_trust_app: 0.8937
+mean_test_pact_conf: 0.9930
+mean_test_pact_pred_err: 0.0264
+mean_test_pact_corr_abs: 0.0305
+mean_test_pact_fit_gain: -0.6812
+mean_test_pact_cond_psi: 54362.3276
+mean_test_pact_beta_cos: -0.0228
+mean_test_pact_beta_relerr: 43.8165
+mean_test_pact_updates: 15470.0000
+mean_test_pact_skipped: 0.0000
+mean_test_pact_bounded: 15208.0000
+mean_test_pact_diverged: 0.0000
+mean_test_pact_resets: 0.0000
+The model is saved!
+
+Episode terminated at time: 240 with return: -48.9536.
+Episode terminated at time: 240 with return: -47.2540.
+Episode terminated at time: 240 with return: -47.9734.
+Episode terminated at time: 240 with return: -49.0887.
+Episode terminated at time: 240 with return: -52.2197.
+Episode terminated at time: 240 with return: -49.0398.
+Episode terminated at time: 240 with return: -50.7178.
+Episode terminated at time: 240 with return: -50.0270.
+Episode terminated at time: 240 with return: -50.2028.
+Episode terminated at time: 240 with return: -51.3346.
+Episode terminated at time: 240 with return: -49.9332.
+Episode terminated at time: 240 with return: -47.8347.
+Episode terminated at time: 240 with return: -50.5153.
+Episode terminated at time: 240 with return: -53.5761.
+Episode terminated at time: 240 with return: -48.9927.
+Episode terminated at time: 240 with return: -52.9869.
+Episode terminated at time: 240 with return: -52.9101.
+Episode terminated at time: 240 with return: -52.4050.
+Episode terminated at time: 240 with return: -52.9883.
+Episode terminated at time: 240 with return: -65.6539.
+Episode terminated at time: 240 with return: -31.5606.
+Episode terminated at time: 240 with return: -33.0038.
+Episode terminated at time: 240 with return: -32.2012.
+Episode terminated at time: 240 with return: -43.6855.
+Episode terminated at time: 240 with return: -33.5068.
+Episode terminated at time: 240 with return: -37.5593.
+Episode terminated at time: 240 with return: -42.2094.
+Episode terminated at time: 240 with return: -34.0059.
+Episode terminated at time: 240 with return: -32.4181.
+Episode terminated at time: 240 with return: -32.6776.
+Episode terminated at time: 240 with return: -51.7620.
+Episode terminated at time: 240 with return: -50.9276.
+Episode terminated at time: 240 with return: -50.4019.
+Episode terminated at time: 240 with return: -48.8113.
+Episode terminated at time: 240 with return: -49.2498.
+Episode terminated at time: 240 with return: -47.2671.
+Episode terminated at time: 240 with return: -50.6200.
+Episode terminated at time: 240 with return: -48.8097.
+Episode terminated at time: 240 with return: -50.5285.
+Episode terminated at time: 240 with return: -54.3179.
+Episode terminated at time: 240 with return: -52.1719.
+Episode terminated at time: 240 with return: -48.6074.
+Episode terminated at time: 240 with return: -48.2740.
+Episode terminated at time: 240 with return: -48.0586.
+Episode terminated at time: 240 with return: -49.4437.
+Episode terminated at time: 240 with return: -49.2168.
+Episode terminated at time: 240 with return: -49.1027.
+Episode terminated at time: 240 with return: -51.3244.
+Episode terminated at time: 240 with return: -49.2974.
+Episode terminated at time: 240 with return: -48.1804.
+Episode terminated at time: 240 with return: -44.1708.
+Episode terminated at time: 240 with return: -39.2682.
+Episode terminated at time: 240 with return: -42.3290.
+Episode terminated at time: 240 with return: -44.3316.
+Episode terminated at time: 240 with return: -36.4826.
+Episode terminated at time: 240 with return: -41.5877.
+Episode terminated at time: 240 with return: -44.0056.
+Episode terminated at time: 240 with return: -44.4075.
+Episode terminated at time: 240 with return: -44.1031.
+Episode terminated at time: 240 with return: -39.4558.
+
+Episode: 80
+mean_train_value_grad_norm: 0.9672
+mean_train_value_loss: 0.3354
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.0687
+mean_train_policy_loss: -0.0703
+mean_train_reward: -0.2016
+mean_train_percentage_of_v_out_of_control: 0.2434
+mean_train_percentage_of_lower_than_lower_v: 0.2230
+mean_train_percentage_of_higher_than_upper_v: 0.0204
+mean_train_totally_controllable_ratio: 0.4142
+mean_train_average_voltage_deviation: 0.0343
+mean_train_average_voltage: 0.9761
+mean_train_max_voltage_drop_deviation: 0.0209
+mean_train_max_voltage_rise_deviation: 0.0015
+mean_train_total_line_loss: 1.6297
+mean_train_q_loss: 1.6730
+mean_train_destroy: 0.0000
+mean_train_ns_A: 0.0011
+mean_train_ns_hour: 11.0927
+mean_train_ns_load: 0.0003
+mean_train_ns_load_frac: 0.0006
+mean_train_ns_y: -0.0002
+mean_train_ns_sat: 0.0000
+mean_train_ns_clipped: 0.0000
+mean_train_ns_x_std: 0.0167
+mean_train_ns_q_exec_abs: 1.6730
+mean_train_ns_q_cmd_abs: 1.6670
+mean_train_ns_resid_after: 0.0075
+mean_train_pact_trust_pol: 0.9000
+mean_train_pact_trust_app: 0.8925
+mean_train_pact_conf: 0.9917
+mean_train_pact_pred_err: 0.0083
+mean_train_pact_corr_abs: 0.0072
+mean_train_pact_fit_gain: 0.3889
+mean_train_pact_cond_psi: 1908.7941
+mean_train_pact_beta_cos: 0.3560
+mean_train_pact_beta_relerr: 14.4003
+mean_train_pact_updates: 28441.0000
+mean_train_pact_skipped: 0.0000
+mean_train_pact_bounded: 28179.0000
+mean_train_pact_diverged: 0.0000
+mean_train_pact_resets: 0.0000
+mean_test_reward: -0.1758
+mean_test_percentage_of_v_out_of_control: 0.4779
+mean_test_percentage_of_lower_than_lower_v: 0.2548
+mean_test_percentage_of_higher_than_upper_v: 0.2231
+mean_test_totally_controllable_ratio: 0.1753
+mean_test_average_voltage_deviation: 0.0516
+mean_test_average_voltage: 0.9992
+mean_test_max_voltage_drop_deviation: 0.0180
+mean_test_max_voltage_rise_deviation: 0.0156
+mean_test_total_line_loss: 2.4212
+mean_test_q_loss: 1.2421
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.2011
+mean_test_ns_hour: 9.9203
+mean_test_ns_load: 0.0618
+mean_test_ns_load_frac: 0.1030
+mean_test_ns_y: -0.0345
+mean_test_ns_sat: 0.0382
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0131
+mean_test_ns_q_exec_abs: 1.2421
+mean_test_ns_q_cmd_abs: 1.2234
+mean_test_ns_resid_after: 0.0474
+mean_test_pact_trust_pol: 0.9000
+mean_test_pact_trust_app: 0.8941
+mean_test_pact_conf: 0.9935
+mean_test_pact_pred_err: 0.0477
+mean_test_pact_corr_abs: 0.0488
+mean_test_pact_fit_gain: -0.2261
+mean_test_pact_cond_psi: 112639.3404
+mean_test_pact_beta_cos: 0.0369
+mean_test_pact_beta_relerr: 35.4787
+mean_test_pact_updates: 29750.0000
+mean_test_pact_skipped: 0.0000
+mean_test_pact_bounded: 29488.0000
+mean_test_pact_diverged: 0.0000
+mean_test_pact_resets: 0.0000
+The model is saved!
+
+Episode terminated at time: 240 with return: -48.9308.
+Episode terminated at time: 240 with return: -48.9502.
+Episode terminated at time: 240 with return: -47.8650.
+Episode terminated at time: 240 with return: -50.4014.
+Episode terminated at time: 240 with return: -49.6208.
+Episode terminated at time: 240 with return: -49.1960.
+Episode terminated at time: 240 with return: -49.9490.
+Episode terminated at time: 240 with return: -48.0890.
+Episode terminated at time: 240 with return: -48.8141.
+Episode terminated at time: 240 with return: -49.4948.
+Episode terminated at time: 240 with return: -50.8785.
+Episode terminated at time: 240 with return: -47.2681.
+Episode terminated at time: 240 with return: -47.7054.
+Episode terminated at time: 240 with return: -47.6530.
+Episode terminated at time: 240 with return: -48.5720.
+Episode terminated at time: 240 with return: -46.5694.
+Episode terminated at time: 240 with return: -47.3368.
+Episode terminated at time: 240 with return: -51.1223.
+Episode terminated at time: 240 with return: -48.1264.
+Episode terminated at time: 240 with return: -46.0536.
+Episode terminated at time: 240 with return: -38.8618.
+Episode terminated at time: 240 with return: -38.0976.
+Episode terminated at time: 240 with return: -39.2234.
+Episode terminated at time: 240 with return: -35.1175.
+Episode terminated at time: 240 with return: -34.2299.
+Episode terminated at time: 240 with return: -38.1607.
+Episode terminated at time: 240 with return: -37.5007.
+Episode terminated at time: 240 with return: -36.1248.
+Episode terminated at time: 240 with return: -36.0662.
+Episode terminated at time: 240 with return: -36.0723.
+Episode terminated at time: 240 with return: -47.8290.
+Episode terminated at time: 240 with return: -47.5071.
+Episode terminated at time: 240 with return: -52.8087.
+Episode terminated at time: 240 with return: -47.5595.
+Episode terminated at time: 240 with return: -51.4281.
+Episode terminated at time: 240 with return: -50.9332.
+Episode terminated at time: 240 with return: -49.0579.
+Episode terminated at time: 240 with return: -51.7385.
+Episode terminated at time: 240 with return: -48.2740.
+Episode terminated at time: 240 with return: -47.3254.
+Episode terminated at time: 240 with return: -48.4236.
+Episode terminated at time: 240 with return: -48.8688.
+Episode terminated at time: 240 with return: -47.6463.
+Episode terminated at time: 240 with return: -48.9280.
+Episode terminated at time: 240 with return: -50.6602.
+Episode terminated at time: 240 with return: -46.6798.
+Episode terminated at time: 240 with return: -49.1458.
+Episode terminated at time: 240 with return: -48.3895.
+Episode terminated at time: 240 with return: -51.0188.
+Episode terminated at time: 240 with return: -50.8726.
+Episode terminated at time: 240 with return: -33.2310.
+Episode terminated at time: 240 with return: -20.2757.
+Episode terminated at time: 240 with return: -24.7759.
+Episode terminated at time: 240 with return: -23.1041.
+Episode terminated at time: 240 with return: -28.5859.
+Episode terminated at time: 240 with return: -25.2562.
+Episode terminated at time: 240 with return: -26.5512.
+Episode terminated at time: 240 with return: -27.5805.
+Episode terminated at time: 240 with return: -26.6730.
+Episode terminated at time: 240 with return: -26.1664.
+
+Episode: 120
+mean_train_value_grad_norm: 2.3962
+mean_train_value_loss: 0.9562
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.0173
+mean_train_policy_loss: -0.7076
+mean_train_reward: -0.2129
+mean_train_percentage_of_v_out_of_control: 0.4723
+mean_train_percentage_of_lower_than_lower_v: 0.4723
+mean_train_percentage_of_higher_than_upper_v: 0.0000
+mean_train_totally_controllable_ratio: 0.2469
+mean_train_average_voltage_deviation: 0.0542
+mean_train_average_voltage: 0.9467
+mean_train_max_voltage_drop_deviation: 0.0457
+mean_train_max_voltage_rise_deviation: -0.0000
+mean_train_total_line_loss: 1.8491
+mean_train_q_loss: 1.5861
+mean_train_destroy: 0.0000
+mean_train_ns_A: 0.0628
+mean_train_ns_hour: 15.3782
+mean_train_ns_load: 0.0158
+mean_train_ns_load_frac: 0.0263
+mean_train_ns_y: -0.0018
+mean_train_ns_sat: 0.0023
+mean_train_ns_clipped: 0.0000
+mean_train_ns_x_std: 0.0173
+mean_train_ns_q_exec_abs: 1.5861
+mean_train_ns_q_cmd_abs: 1.5812
+mean_train_ns_resid_after: 0.0187
+mean_train_pact_trust_pol: 0.9000
+mean_train_pact_trust_app: 0.8906
+mean_train_pact_conf: 0.9896
+mean_train_pact_pred_err: 0.0196
+mean_train_pact_corr_abs: 0.0163
+mean_train_pact_fit_gain: 0.2807
+mean_train_pact_cond_psi: 615.8971
+mean_train_pact_beta_cos: 0.5212
+mean_train_pact_beta_relerr: 4.0474
+mean_train_pact_updates: 42721.0000
+mean_train_pact_skipped: 0.0000
+mean_train_pact_bounded: 42459.0000
+mean_train_pact_diverged: 0.0000
+mean_train_pact_resets: 0.0000
+mean_test_reward: -0.1097
+mean_test_percentage_of_v_out_of_control: 0.2500
+mean_test_percentage_of_lower_than_lower_v: 0.1504
+mean_test_percentage_of_higher_than_upper_v: 0.0996
+mean_test_totally_controllable_ratio: 0.1983
+mean_test_average_voltage_deviation: 0.0375
+mean_test_average_voltage: 0.9850
+mean_test_max_voltage_drop_deviation: 0.0107
+mean_test_max_voltage_rise_deviation: 0.0076
+mean_test_total_line_loss: 1.5005
+mean_test_q_loss: 0.7219
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.1549
+mean_test_ns_hour: 11.5721
+mean_test_ns_load: 0.0136
+mean_test_ns_load_frac: 0.0227
+mean_test_ns_y: 0.0079
+mean_test_ns_sat: 0.0031
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0133
+mean_test_ns_q_exec_abs: 0.7219
+mean_test_ns_q_cmd_abs: 0.7145
+mean_test_ns_resid_after: 0.0087
+mean_test_pact_trust_pol: 0.9000
+mean_test_pact_trust_app: 0.8870
+mean_test_pact_conf: 0.9855
+mean_test_pact_pred_err: 0.0090
+mean_test_pact_corr_abs: 0.0122
+mean_test_pact_fit_gain: -11.8839
+mean_test_pact_cond_psi: 95707.9264
+mean_test_pact_beta_cos: 0.0299
+mean_test_pact_beta_relerr: 26.5952
+mean_test_pact_updates: 44030.0000
+mean_test_pact_skipped: 0.0000
+mean_test_pact_bounded: 43768.0000
+mean_test_pact_diverged: 0.0000
+mean_test_pact_resets: 0.0000
+The model is saved!
+
+Episode terminated at time: 240 with return: -52.1983.
+Episode terminated at time: 240 with return: -51.2442.
+Episode terminated at time: 240 with return: -48.0048.
+Episode terminated at time: 240 with return: -48.7397.
+Episode terminated at time: 240 with return: -48.1494.
+Episode terminated at time: 240 with return: -47.7206.
+Episode terminated at time: 240 with return: -49.9818.
+Episode terminated at time: 240 with return: -47.4015.
+Episode terminated at time: 240 with return: -47.9961.
+Episode terminated at time: 240 with return: -47.8301.
+Episode terminated at time: 240 with return: -50.6633.
+Episode terminated at time: 240 with return: -46.3480.
+Episode terminated at time: 240 with return: -46.2985.
+Episode terminated at time: 240 with return: -48.0157.
+Episode terminated at time: 240 with return: -46.2291.
+Episode terminated at time: 240 with return: -48.1270.
+Episode terminated at time: 240 with return: -46.7267.
+Episode terminated at time: 240 with return: -46.6210.
+Episode terminated at time: 240 with return: -46.0850.
+Episode terminated at time: 240 with return: -48.5665.
+Episode terminated at time: 240 with return: -22.4184.
+Episode terminated at time: 240 with return: -26.7652.
+Episode terminated at time: 240 with return: -25.7305.
+Episode terminated at time: 240 with return: -25.7302.
+Episode terminated at time: 240 with return: -25.2397.
+Episode terminated at time: 240 with return: -26.1636.
+Episode terminated at time: 240 with return: -25.3630.
+Episode terminated at time: 240 with return: -29.0379.
+Episode terminated at time: 240 with return: -23.6352.
+Episode terminated at time: 240 with return: -25.3693.
+Episode terminated at time: 240 with return: -52.7661.
+Episode terminated at time: 240 with return: -46.6179.
+Episode terminated at time: 240 with return: -47.3341.
+Episode terminated at time: 240 with return: -44.2655.
+Episode terminated at time: 240 with return: -47.3587.
+Episode terminated at time: 240 with return: -46.7039.
+Episode terminated at time: 240 with return: -49.1567.
+Episode terminated at time: 240 with return: -46.5967.
+Episode terminated at time: 240 with return: -46.8160.
+Episode terminated at time: 240 with return: -45.7403.
+Episode terminated at time: 240 with return: -48.3602.
+Episode terminated at time: 240 with return: -47.7758.
+Episode terminated at time: 240 with return: -51.5764.
+Episode terminated at time: 240 with return: -45.8514.
+Episode terminated at time: 240 with return: -44.7115.
+Episode terminated at time: 240 with return: -45.7238.
+Episode terminated at time: 240 with return: -46.1470.
+Episode terminated at time: 240 with return: -46.2889.
+Episode terminated at time: 240 with return: -44.4456.
+Episode terminated at time: 240 with return: -49.1249.
+Episode terminated at time: 240 with return: -15.0469.
+Episode terminated at time: 240 with return: -26.5791.
+Episode terminated at time: 240 with return: -22.9987.
+Episode terminated at time: 240 with return: -26.5693.
+Episode terminated at time: 240 with return: -22.8785.
+Episode terminated at time: 240 with return: -25.3217.
+Episode terminated at time: 240 with return: -26.7997.
+Episode terminated at time: 240 with return: -22.1267.
+Episode terminated at time: 240 with return: -32.0295.
+Episode terminated at time: 240 with return: -22.8616.
+
+Episode: 160
+mean_train_value_grad_norm: 3.2556
+mean_train_value_loss: 0.8034
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.1645
+mean_train_policy_loss: -0.5562
+mean_train_reward: -0.2055
+mean_train_percentage_of_v_out_of_control: 0.3397
+mean_train_percentage_of_lower_than_lower_v: 0.3348
+mean_train_percentage_of_higher_than_upper_v: 0.0050
+mean_train_totally_controllable_ratio: 0.3682
+mean_train_average_voltage_deviation: 0.0430
+mean_train_average_voltage: 0.9616
+mean_train_max_voltage_drop_deviation: 0.0316
+mean_train_max_voltage_rise_deviation: 0.0004
+mean_train_total_line_loss: 1.6672
+mean_train_q_loss: 1.6256
+mean_train_destroy: 0.0000
+mean_train_ns_A: 0.4824
+mean_train_ns_hour: 9.8000
+mean_train_ns_load: 0.1161
+mean_train_ns_load_frac: 0.1935
+mean_train_ns_y: -0.0260
+mean_train_ns_sat: 0.0555
+mean_train_ns_clipped: 0.0000
+mean_train_ns_x_std: 0.0165
+mean_train_ns_q_exec_abs: 1.6256
+mean_train_ns_q_cmd_abs: 1.6237
+mean_train_ns_resid_after: 0.0686
+mean_train_pact_trust_pol: 0.9000
+mean_train_pact_trust_app: 0.8914
+mean_train_pact_conf: 0.9905
+mean_train_pact_pred_err: 0.0670
+mean_train_pact_corr_abs: 0.0981
+mean_train_pact_fit_gain: 0.6745
+mean_train_pact_cond_psi: 974.4413
+mean_train_pact_beta_cos: 0.6888
+mean_train_pact_beta_relerr: 1.2636
+mean_train_pact_updates: 57001.0000
+mean_train_pact_skipped: 0.0000
+mean_train_pact_bounded: 56739.0000
+mean_train_pact_diverged: 0.0000
+mean_train_pact_resets: 0.0000
+mean_test_reward: -0.1018
+mean_test_percentage_of_v_out_of_control: 0.1550
+mean_test_percentage_of_lower_than_lower_v: 0.0622
+mean_test_percentage_of_higher_than_upper_v: 0.0928
+mean_test_totally_controllable_ratio: 0.6289
+mean_test_average_voltage_deviation: 0.0302
+mean_test_average_voltage: 0.9894
+mean_test_max_voltage_drop_deviation: 0.0018
+mean_test_max_voltage_rise_deviation: 0.0076
+mean_test_total_line_loss: 1.3459
+mean_test_q_loss: 0.7155
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.2783
+mean_test_ns_hour: 12.2780
+mean_test_ns_load: 0.0228
+mean_test_ns_load_frac: 0.0381
+mean_test_ns_y: 0.0052
+mean_test_ns_sat: 0.0007
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0087
+mean_test_ns_q_exec_abs: 0.7155
+mean_test_ns_q_cmd_abs: 0.7164
+mean_test_ns_resid_after: 0.0125
+mean_test_pact_trust_pol: 0.9000
+mean_test_pact_trust_app: 0.8869
+mean_test_pact_conf: 0.9855
+mean_test_pact_pred_err: 0.0128
+mean_test_pact_corr_abs: 0.0204
+mean_test_pact_fit_gain: 0.3628
+mean_test_pact_cond_psi: 58508.5922
+mean_test_pact_beta_cos: 0.2434
+mean_test_pact_beta_relerr: 84.3990
+mean_test_pact_updates: 58310.0000
+mean_test_pact_skipped: 0.0000
+mean_test_pact_bounded: 58048.0000
+mean_test_pact_diverged: 0.0000
+mean_test_pact_resets: 0.0000
+The model is saved!
+
+Episode terminated at time: 240 with return: -45.3289.
+Episode terminated at time: 240 with return: -47.5728.
+Episode terminated at time: 240 with return: -47.8359.
+Episode terminated at time: 240 with return: -48.3073.
+Episode terminated at time: 240 with return: -46.9326.
+Episode terminated at time: 240 with return: -46.6320.
+Episode terminated at time: 240 with return: -47.9949.
+Episode terminated at time: 240 with return: -49.3347.
+Episode terminated at time: 240 with return: -46.7524.
+Episode terminated at time: 240 with return: -46.9801.
+Episode terminated at time: 240 with return: -44.4971.
+Episode terminated at time: 240 with return: -46.6743.
+Episode terminated at time: 240 with return: -45.7192.
+Episode terminated at time: 240 with return: -46.0792.
+Episode terminated at time: 240 with return: -45.0147.
+Episode terminated at time: 240 with return: -47.4843.
+Episode terminated at time: 240 with return: -45.4794.
+Episode terminated at time: 240 with return: -45.0225.
+Episode terminated at time: 240 with return: -46.8888.
+Episode terminated at time: 240 with return: -46.1233.
+Episode terminated at time: 240 with return: -20.7037.
+Episode terminated at time: 240 with return: -20.7039.
+Episode terminated at time: 240 with return: -21.1507.
+Episode terminated at time: 240 with return: -25.0081.
+Episode terminated at time: 240 with return: -24.0499.
+Episode terminated at time: 240 with return: -23.2598.
+Episode terminated at time: 240 with return: -21.9587.
+Episode terminated at time: 240 with return: -23.3976.
+Episode terminated at time: 240 with return: -24.3221.
+Episode terminated at time: 240 with return: -25.9820.
+Episode terminated at time: 240 with return: -46.4449.
+Episode terminated at time: 240 with return: -45.1666.
+Episode terminated at time: 240 with return: -46.0362.
+Episode terminated at time: 240 with return: -46.4360.
+Episode terminated at time: 240 with return: -47.5655.
+Episode terminated at time: 240 with return: -43.7488.
+Episode terminated at time: 240 with return: -47.2119.
+Episode terminated at time: 240 with return: -47.7729.
+Episode terminated at time: 240 with return: -43.8051.
+Episode terminated at time: 240 with return: -47.8531.
+Episode terminated at time: 240 with return: -45.3564.
+Episode terminated at time: 240 with return: -44.9841.
+Episode terminated at time: 240 with return: -46.4383.
+Episode terminated at time: 240 with return: -48.3274.
+Episode terminated at time: 240 with return: -45.2757.
+Episode terminated at time: 240 with return: -45.0456.
+Episode terminated at time: 240 with return: -46.3739.
+Episode terminated at time: 240 with return: -43.9143.
+Episode terminated at time: 240 with return: -44.1504.
+Episode terminated at time: 240 with return: -45.3979.
+Episode terminated at time: 240 with return: -25.2161.
+Episode terminated at time: 240 with return: -21.5144.
+Episode terminated at time: 240 with return: -15.9056.
+Episode terminated at time: 240 with return: -24.3870.
+Episode terminated at time: 240 with return: -23.0280.
+Episode terminated at time: 240 with return: -19.2533.
+Episode terminated at time: 240 with return: -21.5449.
+Episode terminated at time: 240 with return: -23.5689.
+Episode terminated at time: 240 with return: -17.2695.
+Episode terminated at time: 240 with return: -17.9210.
+
+Episode: 200
+mean_train_value_grad_norm: 5.2922
+mean_train_value_loss: 1.2314
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.0961
+mean_train_policy_loss: -1.4969
+mean_train_reward: -0.1899
+mean_train_percentage_of_v_out_of_control: 0.2100
+mean_train_percentage_of_lower_than_lower_v: 0.2043
+mean_train_percentage_of_higher_than_upper_v: 0.0057
+mean_train_totally_controllable_ratio: 0.5105
+mean_train_average_voltage_deviation: 0.0320
+mean_train_average_voltage: 0.9741
+mean_train_max_voltage_drop_deviation: 0.0163
+mean_train_max_voltage_rise_deviation: 0.0005
+mean_train_total_line_loss: 1.3655
+mean_train_q_loss: 1.5792
+mean_train_destroy: 0.0000
+mean_train_ns_A: 0.0172
+mean_train_ns_hour: 9.7818
+mean_train_ns_load: 0.0046
+mean_train_ns_load_frac: 0.0076
+mean_train_ns_y: -0.0031
+mean_train_ns_sat: 0.0000
+mean_train_ns_clipped: 0.0000
+mean_train_ns_x_std: 0.0156
+mean_train_ns_q_exec_abs: 1.5792
+mean_train_ns_q_cmd_abs: 1.5703
+mean_train_ns_resid_after: 0.0296
+mean_train_pact_trust_pol: 0.9000
+mean_train_pact_trust_app: 0.8915
+mean_train_pact_conf: 0.9906
+mean_train_pact_pred_err: 0.0327
+mean_train_pact_corr_abs: 0.0272
+mean_train_pact_fit_gain: 0.3143
+mean_train_pact_cond_psi: 1091.5054
+mean_train_pact_beta_cos: 0.5466
+mean_train_pact_beta_relerr: 1.0585
+mean_train_pact_updates: 71281.0000
+mean_train_pact_skipped: 0.0000
+mean_train_pact_bounded: 71019.0000
+mean_train_pact_diverged: 0.0000
+mean_train_pact_resets: 0.0000
+mean_test_reward: -0.0877
+mean_test_percentage_of_v_out_of_control: 0.1012
+mean_test_percentage_of_lower_than_lower_v: 0.0237
+mean_test_percentage_of_higher_than_upper_v: 0.0775
+mean_test_totally_controllable_ratio: 0.7632
+mean_test_average_voltage_deviation: 0.0281
+mean_test_average_voltage: 0.9891
+mean_test_max_voltage_drop_deviation: 0.0006
+mean_test_max_voltage_rise_deviation: 0.0060
+mean_test_total_line_loss: 1.2677
+mean_test_q_loss: 0.5964
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.2764
+mean_test_ns_hour: 12.9911
+mean_test_ns_load: 0.0226
+mean_test_ns_load_frac: 0.0376
+mean_test_ns_y: 0.0091
+mean_test_ns_sat: 0.0010
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0062
+mean_test_ns_q_exec_abs: 0.5964
+mean_test_ns_q_cmd_abs: 0.5948
+mean_test_ns_resid_after: 0.0128
+mean_test_pact_trust_pol: 0.9000
+mean_test_pact_trust_app: 0.8878
+mean_test_pact_conf: 0.9864
+mean_test_pact_pred_err: 0.0135
+mean_test_pact_corr_abs: 0.0210
+mean_test_pact_fit_gain: 0.1289
+mean_test_pact_cond_psi: 62580.0637
+mean_test_pact_beta_cos: 0.1700
+mean_test_pact_beta_relerr: 61.7447
+mean_test_pact_updates: 72590.0000
+mean_test_pact_skipped: 0.0000
+mean_test_pact_bounded: 72328.0000
+mean_test_pact_diverged: 0.0000
+mean_test_pact_resets: 0.0000
+The model is saved!
+
+Episode terminated at time: 240 with return: -46.1343.
+Episode terminated at time: 240 with return: -46.0057.
+Episode terminated at time: 240 with return: -47.1710.
+Episode terminated at time: 240 with return: -49.3949.
+Episode terminated at time: 240 with return: -44.7753.
+Episode terminated at time: 240 with return: -46.0836.
+Episode terminated at time: 240 with return: -47.1547.
+Episode terminated at time: 240 with return: -46.7081.
+Episode terminated at time: 240 with return: -46.3731.
+Episode terminated at time: 240 with return: -47.7163.
+Episode terminated at time: 240 with return: -44.5864.
+Episode terminated at time: 240 with return: -46.4810.
+Episode terminated at time: 240 with return: -45.4443.
+Episode terminated at time: 240 with return: -46.4932.
+Episode terminated at time: 240 with return: -47.1317.
+Episode terminated at time: 240 with return: -44.8481.
+Episode terminated at time: 240 with return: -45.1365.
+Episode terminated at time: 240 with return: -43.2768.
+Episode terminated at time: 240 with return: -44.4035.
+Episode terminated at time: 240 with return: -46.1036.
+Episode terminated at time: 240 with return: -20.2911.
+Episode terminated at time: 240 with return: -17.9707.
+Episode terminated at time: 240 with return: -19.5743.
+Episode terminated at time: 240 with return: -15.7897.
+Episode terminated at time: 240 with return: -20.3947.
+Episode terminated at time: 240 with return: -16.4811.
+Episode terminated at time: 240 with return: -18.7273.
+Episode terminated at time: 240 with return: -17.8610.
+Episode terminated at time: 240 with return: -18.1351.
+Episode terminated at time: 240 with return: -16.6812.
+Episode terminated at time: 240 with return: -46.0861.
+Episode terminated at time: 240 with return: -47.9220.
+Episode terminated at time: 240 with return: -46.9474.
+Episode terminated at time: 240 with return: -47.0885.
+Episode terminated at time: 240 with return: -47.7564.
+Episode terminated at time: 240 with return: -45.8806.
+Episode terminated at time: 240 with return: -45.7365.
+Episode terminated at time: 240 with return: -45.0951.
+Episode terminated at time: 240 with return: -46.0510.
+Episode terminated at time: 240 with return: -47.4754.
+Episode terminated at time: 240 with return: -44.7511.
+Episode terminated at time: 240 with return: -45.4948.
+Episode terminated at time: 240 with return: -43.8932.
+Episode terminated at time: 240 with return: -46.6244.
+Episode terminated at time: 240 with return: -48.5817.
+Episode terminated at time: 240 with return: -46.5377.
+Episode terminated at time: 240 with return: -44.1659.
+Episode terminated at time: 240 with return: -48.5735.
+Episode terminated at time: 240 with return: -47.8368.
+Episode terminated at time: 240 with return: -45.1640.
+Episode terminated at time: 240 with return: -19.6005.
+Episode terminated at time: 240 with return: -20.9227.
+Episode terminated at time: 240 with return: -16.7420.
+Episode terminated at time: 240 with return: -18.1368.
+Episode terminated at time: 240 with return: -17.1669.
+Episode terminated at time: 240 with return: -17.8923.
+Episode terminated at time: 240 with return: -17.7880.
+Episode terminated at time: 240 with return: -18.6844.
+Episode terminated at time: 240 with return: -18.2055.
+Episode terminated at time: 240 with return: -19.0398.
+
+Episode: 240
+mean_train_value_grad_norm: 4.2735
+mean_train_value_loss: 1.1517
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.0234
+mean_train_policy_loss: -1.2900
+mean_train_reward: -0.1890
+mean_train_percentage_of_v_out_of_control: 0.2359
+mean_train_percentage_of_lower_than_lower_v: 0.1606
+mean_train_percentage_of_higher_than_upper_v: 0.0753
+mean_train_totally_controllable_ratio: 0.4100
+mean_train_average_voltage_deviation: 0.0347
+mean_train_average_voltage: 0.9885
+mean_train_max_voltage_drop_deviation: 0.0126
+mean_train_max_voltage_rise_deviation: 0.0078
+mean_train_total_line_loss: 2.0462
+mean_train_q_loss: 1.5428
+mean_train_destroy: 0.0000
+mean_train_ns_A: 0.4315
+mean_train_ns_hour: 15.5000
+mean_train_ns_load: 0.0941
+mean_train_ns_load_frac: 0.1568
+mean_train_ns_y: 0.0201
+mean_train_ns_sat: 0.0420
+mean_train_ns_clipped: 0.0000
+mean_train_ns_x_std: 0.0151
+mean_train_ns_q_exec_abs: 1.5428
+mean_train_ns_q_cmd_abs: 1.5316
+mean_train_ns_resid_after: 0.0623
+mean_train_pact_trust_pol: 0.9000
+mean_train_pact_trust_app: 0.8915
+mean_train_pact_conf: 0.9906
+mean_train_pact_pred_err: 0.0631
+mean_train_pact_corr_abs: 0.0813
+mean_train_pact_fit_gain: 0.6449
+mean_train_pact_cond_psi: 1096.0033
+mean_train_pact_beta_cos: 0.6386
+mean_train_pact_beta_relerr: 3.1606
+mean_train_pact_updates: 85561.0000
+mean_train_pact_skipped: 0.0000
+mean_train_pact_bounded: 85299.0000
+mean_train_pact_diverged: 0.0000
+mean_train_pact_resets: 0.0000
+mean_test_reward: -0.0771
+mean_test_percentage_of_v_out_of_control: 0.0099
+mean_test_percentage_of_lower_than_lower_v: 0.0040
+mean_test_percentage_of_higher_than_upper_v: 0.0059
+mean_test_totally_controllable_ratio: 0.9502
+mean_test_average_voltage_deviation: 0.0178
+mean_test_average_voltage: 0.9895
+mean_test_max_voltage_drop_deviation: 0.0001
+mean_test_max_voltage_rise_deviation: 0.0004
+mean_test_total_line_loss: 0.7034
+mean_test_q_loss: 0.5927
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.2205
+mean_test_ns_hour: 11.4794
+mean_test_ns_load: 0.0166
+mean_test_ns_load_frac: 0.0277
+mean_test_ns_y: 0.0060
+mean_test_ns_sat: 0.0000
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0060
+mean_test_ns_q_exec_abs: 0.5927
+mean_test_ns_q_cmd_abs: 0.5932
+mean_test_ns_resid_after: 0.0106
+mean_test_pact_trust_pol: 0.9000
+mean_test_pact_trust_app: 0.8882
+mean_test_pact_conf: 0.9868
+mean_test_pact_pred_err: 0.0111
+mean_test_pact_corr_abs: 0.0149
+mean_test_pact_fit_gain: 0.1247
+mean_test_pact_cond_psi: 74299.5573
+mean_test_pact_beta_cos: 0.0824
+mean_test_pact_beta_relerr: 33.0911
+mean_test_pact_updates: 86870.0000
+mean_test_pact_skipped: 0.0000
+mean_test_pact_bounded: 86608.0000
+mean_test_pact_diverged: 0.0000
+mean_test_pact_resets: 0.0000
+The model is saved!
+
+Episode terminated at time: 240 with return: -46.5433.
+Episode terminated at time: 240 with return: -47.2104.
+Episode terminated at time: 240 with return: -47.6231.
+Episode terminated at time: 240 with return: -45.7058.
+Episode terminated at time: 240 with return: -46.2572.
+Episode terminated at time: 240 with return: -45.7017.
+Episode terminated at time: 240 with return: -48.4349.
+Episode terminated at time: 240 with return: -45.4732.
+Episode terminated at time: 240 with return: -45.2616.
+Episode terminated at time: 240 with return: -45.2197.
+Episode terminated at time: 240 with return: -44.2885.
+Episode terminated at time: 240 with return: -46.3297.
+Episode terminated at time: 240 with return: -44.2243.
+Episode terminated at time: 240 with return: -44.6742.
+Episode terminated at time: 240 with return: -46.1243.
+Episode terminated at time: 240 with return: -44.4115.
+Episode terminated at time: 240 with return: -46.5997.
+Episode terminated at time: 240 with return: -45.6253.
+Episode terminated at time: 240 with return: -44.9607.
+Episode terminated at time: 240 with return: -45.9767.
+Episode terminated at time: 240 with return: -20.8199.
+Episode terminated at time: 240 with return: -18.8265.
+Episode terminated at time: 240 with return: -23.2952.
+Episode terminated at time: 240 with return: -20.8562.
+Episode terminated at time: 240 with return: -20.3708.
+Episode terminated at time: 240 with return: -23.5046.
+Episode terminated at time: 240 with return: -18.4807.
+Episode terminated at time: 240 with return: -21.1310.
+Episode terminated at time: 240 with return: -18.1104.
+Episode terminated at time: 240 with return: -19.7410.
+Episode terminated at time: 240 with return: -44.0683.
+Episode terminated at time: 240 with return: -45.1900.
+Episode terminated at time: 240 with return: -47.1391.
+Episode terminated at time: 240 with return: -48.0900.
+Episode terminated at time: 240 with return: -47.7696.
+Episode terminated at time: 240 with return: -45.0049.
+Episode terminated at time: 240 with return: -46.7689.
+Episode terminated at time: 240 with return: -45.5308.
+Episode terminated at time: 240 with return: -46.8032.
+Episode terminated at time: 240 with return: -49.5328.
+Episode terminated at time: 240 with return: -44.9039.
+Episode terminated at time: 240 with return: -47.7940.
+Episode terminated at time: 240 with return: -44.2224.
+Episode terminated at time: 240 with return: -47.3066.
+Episode terminated at time: 240 with return: -47.7975.
+Episode terminated at time: 240 with return: -43.9130.
+Episode terminated at time: 240 with return: -46.4209.
+Episode terminated at time: 240 with return: -46.2193.
+Episode terminated at time: 240 with return: -45.2218.
+Episode terminated at time: 240 with return: -44.8527.
+Episode terminated at time: 240 with return: -19.5353.
+Episode terminated at time: 240 with return: -20.8560.
+Episode terminated at time: 240 with return: -19.3407.
+Episode terminated at time: 240 with return: -20.2899.
+Episode terminated at time: 240 with return: -24.4209.
+Episode terminated at time: 240 with return: -19.7634.
+Episode terminated at time: 240 with return: -20.3809.
+Episode terminated at time: 240 with return: -20.1628.
+Episode terminated at time: 240 with return: -20.3811.
+Episode terminated at time: 240 with return: -23.0272.
+
+Episode: 280
+mean_train_value_grad_norm: 2.8575
+mean_train_value_loss: 0.6120
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.2967
+mean_train_policy_loss: -1.3718
+mean_train_reward: -0.1877
+mean_train_percentage_of_v_out_of_control: 0.1645
+mean_train_percentage_of_lower_than_lower_v: 0.1576
+mean_train_percentage_of_higher_than_upper_v: 0.0069
+mean_train_totally_controllable_ratio: 0.5397
+mean_train_average_voltage_deviation: 0.0287
+mean_train_average_voltage: 0.9789
+mean_train_max_voltage_drop_deviation: 0.0132
+mean_train_max_voltage_rise_deviation: 0.0006
+mean_train_total_line_loss: 1.2209
+mean_train_q_loss: 1.5892
+mean_train_destroy: 0.0000
+mean_train_ns_A: 0.1265
+mean_train_ns_hour: 7.4626
+mean_train_ns_load: 0.0306
+mean_train_ns_load_frac: 0.0510
+mean_train_ns_y: -0.0134
+mean_train_ns_sat: 0.0091
+mean_train_ns_clipped: 0.0000
+mean_train_ns_x_std: 0.0152
+mean_train_ns_q_exec_abs: 1.5892
+mean_train_ns_q_cmd_abs: 1.5913
+mean_train_ns_resid_after: 0.0345
+mean_train_pact_trust_pol: 0.9000
+mean_train_pact_trust_app: 0.8917
+mean_train_pact_conf: 0.9908
+mean_train_pact_pred_err: 0.0350
+mean_train_pact_corr_abs: 0.0234
+mean_train_pact_fit_gain: 0.3055
+mean_train_pact_cond_psi: 1012.0177
+mean_train_pact_beta_cos: 0.4882
+mean_train_pact_beta_relerr: 1.1337
+mean_train_pact_updates: 99841.0000
+mean_train_pact_skipped: 0.0000
+mean_train_pact_bounded: 99579.0000
+mean_train_pact_diverged: 0.0000
+mean_train_pact_resets: 0.0000
+mean_test_reward: -0.0871
+mean_test_percentage_of_v_out_of_control: 0.0579
+mean_test_percentage_of_lower_than_lower_v: 0.0058
+mean_test_percentage_of_higher_than_upper_v: 0.0522
+mean_test_totally_controllable_ratio: 0.8782
+mean_test_average_voltage_deviation: 0.0168
+mean_test_average_voltage: 0.9989
+mean_test_max_voltage_drop_deviation: 0.0002
+mean_test_max_voltage_rise_deviation: 0.0024
+mean_test_total_line_loss: 1.1826
+mean_test_q_loss: 0.7026
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.2633
+mean_test_ns_hour: 11.1395
+mean_test_ns_load: 0.0380
+mean_test_ns_load_frac: 0.0634
+mean_test_ns_y: -0.0016
+mean_test_ns_sat: 0.0003
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0073
+mean_test_ns_q_exec_abs: 0.7026
+mean_test_ns_q_cmd_abs: 0.7013
+mean_test_ns_resid_after: 0.0195
+mean_test_pact_trust_pol: 0.9000
+mean_test_pact_trust_app: 0.8902
+mean_test_pact_conf: 0.9892
+mean_test_pact_pred_err: 0.0201
+mean_test_pact_corr_abs: 0.0355
+mean_test_pact_fit_gain: 0.2094
+mean_test_pact_cond_psi: 147108.6817
+mean_test_pact_beta_cos: 0.0892
+mean_test_pact_beta_relerr: 83.2103
+mean_test_pact_updates: 101150.0000
+mean_test_pact_skipped: 0.0000
+mean_test_pact_bounded: 100888.0000
+mean_test_pact_diverged: 0.0000
+mean_test_pact_resets: 0.0000
+The model is saved!
+
+Episode terminated at time: 240 with return: -45.2270.
+Episode terminated at time: 240 with return: -44.6551.
+Episode terminated at time: 240 with return: -48.9094.
+Episode terminated at time: 240 with return: -46.6922.
+Episode terminated at time: 240 with return: -46.4724.
+Episode terminated at time: 240 with return: -48.9750.
+Episode terminated at time: 240 with return: -46.3696.
+Episode terminated at time: 240 with return: -44.4381.
+Episode terminated at time: 240 with return: -47.0725.
+Episode terminated at time: 240 with return: -45.4782.
+Episode terminated at time: 240 with return: -44.6606.
+Episode terminated at time: 240 with return: -47.3754.
+Episode terminated at time: 240 with return: -46.1197.
+Episode terminated at time: 240 with return: -44.4374.
+Episode terminated at time: 240 with return: -44.4362.
+Episode terminated at time: 240 with return: -46.2035.
+Episode terminated at time: 240 with return: -44.8178.
+Episode terminated at time: 240 with return: -44.9396.
+Episode terminated at time: 240 with return: -43.4205.
+Episode terminated at time: 240 with return: -45.4454.
+Episode terminated at time: 240 with return: -16.8556.
+Episode terminated at time: 240 with return: -15.7406.
+Episode terminated at time: 240 with return: -19.8140.
+Episode terminated at time: 240 with return: -23.5932.
+Episode terminated at time: 240 with return: -17.3753.
+Episode terminated at time: 240 with return: -27.0063.
+Episode terminated at time: 240 with return: -19.3651.
+Episode terminated at time: 240 with return: -17.2415.
+Episode terminated at time: 240 with return: -20.3865.
+Episode terminated at time: 240 with return: -21.8405.
+Episode terminated at time: 240 with return: -47.0530.
+Episode terminated at time: 240 with return: -46.0552.
+Episode terminated at time: 240 with return: -44.1480.
+Episode terminated at time: 240 with return: -43.8661.
+Episode terminated at time: 240 with return: -46.3637.
+Episode terminated at time: 240 with return: -46.2552.
+Episode terminated at time: 240 with return: -45.6920.
+Episode terminated at time: 240 with return: -43.5096.
+Episode terminated at time: 240 with return: -46.5033.
+Episode terminated at time: 240 with return: -47.2896.
+Episode terminated at time: 240 with return: -45.0974.
+Episode terminated at time: 240 with return: -47.1614.
+Episode terminated at time: 240 with return: -43.9707.
+Episode terminated at time: 240 with return: -44.5779.
+Episode terminated at time: 240 with return: -46.0133.
+Episode terminated at time: 240 with return: -47.0201.
+Episode terminated at time: 240 with return: -45.1960.
+Episode terminated at time: 240 with return: -47.7542.
+Episode terminated at time: 240 with return: -44.9560.
+Episode terminated at time: 240 with return: -45.7869.
+Episode terminated at time: 240 with return: -19.0215.
+Episode terminated at time: 240 with return: -27.4596.
+Episode terminated at time: 240 with return: -18.6607.
+Episode terminated at time: 240 with return: -20.2532.
+Episode terminated at time: 240 with return: -23.8042.
+Episode terminated at time: 240 with return: -22.4373.
+Episode terminated at time: 240 with return: -25.9101.
+Episode terminated at time: 240 with return: -19.2557.
+Episode terminated at time: 240 with return: -18.7944.
+Episode terminated at time: 240 with return: -20.1068.
+
+Episode: 320
+mean_train_value_grad_norm: 8.5761
+mean_train_value_loss: 0.9315
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.2656
+mean_train_policy_loss: -2.0638
+mean_train_reward: -0.1916
+mean_train_percentage_of_v_out_of_control: 0.2153
+mean_train_percentage_of_lower_than_lower_v: 0.2040
+mean_train_percentage_of_higher_than_upper_v: 0.0112
+mean_train_totally_controllable_ratio: 0.4728
+mean_train_average_voltage_deviation: 0.0332
+mean_train_average_voltage: 0.9758
+mean_train_max_voltage_drop_deviation: 0.0183
+mean_train_max_voltage_rise_deviation: 0.0014
+mean_train_total_line_loss: 1.4614
+mean_train_q_loss: 1.5836
+mean_train_destroy: 0.0000
+mean_train_ns_A: 0.4998
+mean_train_ns_hour: 10.9500
+mean_train_ns_load: 0.1202
+mean_train_ns_load_frac: 0.2003
+mean_train_ns_y: -0.0295
+mean_train_ns_sat: 0.0529
+mean_train_ns_clipped: 0.0000
+mean_train_ns_x_std: 0.0160
+mean_train_ns_q_exec_abs: 1.5836
+mean_train_ns_q_cmd_abs: 1.5707
+mean_train_ns_resid_after: 0.0611
+mean_train_pact_trust_pol: 0.9000
+mean_train_pact_trust_app: 0.8917
+mean_train_pact_conf: 0.9908
+mean_train_pact_pred_err: 0.0588
+mean_train_pact_corr_abs: 0.0842
+mean_train_pact_fit_gain: 0.5431
+mean_train_pact_cond_psi: 1087.1231
+mean_train_pact_beta_cos: 0.6055
+mean_train_pact_beta_relerr: 1.5329
+mean_train_pact_updates: 114121.0000
+mean_train_pact_skipped: 0.0000
+mean_train_pact_bounded: 113859.0000
+mean_train_pact_diverged: 0.0000
+mean_train_pact_resets: 0.0000
+mean_test_reward: -0.0903
+mean_test_percentage_of_v_out_of_control: 0.0474
+mean_test_percentage_of_lower_than_lower_v: 0.0170
+mean_test_percentage_of_higher_than_upper_v: 0.0304
+mean_test_totally_controllable_ratio: 0.8975
+mean_test_average_voltage_deviation: 0.0169
+mean_test_average_voltage: 0.9918
+mean_test_max_voltage_drop_deviation: 0.0005
+mean_test_max_voltage_rise_deviation: 0.0018
+mean_test_total_line_loss: 1.1798
+mean_test_q_loss: 0.7338
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.2132
+mean_test_ns_hour: 11.0560
+mean_test_ns_load: 0.0372
+mean_test_ns_load_frac: 0.0621
+mean_test_ns_y: 0.0066
+mean_test_ns_sat: 0.0005
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0082
+mean_test_ns_q_exec_abs: 0.7338
+mean_test_ns_q_cmd_abs: 0.7286
+mean_test_ns_resid_after: 0.0220
+mean_test_pact_trust_pol: 0.9000
+mean_test_pact_trust_app: 0.8916
+mean_test_pact_conf: 0.9906
+mean_test_pact_pred_err: 0.0229
+mean_test_pact_corr_abs: 0.0358
+mean_test_pact_fit_gain: 0.0017
+mean_test_pact_cond_psi: 169330.8496
+mean_test_pact_beta_cos: -0.0098
+mean_test_pact_beta_relerr: 95.2576
+mean_test_pact_updates: 115430.0000
+mean_test_pact_skipped: 0.0000
+mean_test_pact_bounded: 115168.0000
+mean_test_pact_diverged: 0.0000
+mean_test_pact_resets: 0.0000
+The model is saved!
+
+Episode terminated at time: 240 with return: -45.0143.
+Episode terminated at time: 240 with return: -45.9287.
+Episode terminated at time: 240 with return: -46.8495.
+Episode terminated at time: 240 with return: -44.9719.
+Episode terminated at time: 240 with return: -45.9921.
+Episode terminated at time: 240 with return: -48.5845.
+Episode terminated at time: 240 with return: -47.1763.
+Episode terminated at time: 240 with return: -43.1664.
+Episode terminated at time: 240 with return: -45.1832.
+Episode terminated at time: 240 with return: -47.2034.
+Episode terminated at time: 240 with return: -44.3391.
+Episode terminated at time: 240 with return: -44.8149.
+Episode terminated at time: 240 with return: -45.8434.
+Episode terminated at time: 240 with return: -45.3200.
+Episode terminated at time: 240 with return: -46.4826.
+Episode terminated at time: 240 with return: -45.2496.
+Episode terminated at time: 240 with return: -45.3230.
+Episode terminated at time: 240 with return: -47.0739.
+Episode terminated at time: 240 with return: -44.4135.
+Episode terminated at time: 240 with return: -44.9825.
+Episode terminated at time: 240 with return: -21.4676.
+Episode terminated at time: 240 with return: -22.4156.
+Episode terminated at time: 240 with return: -25.5638.
+Episode terminated at time: 240 with return: -23.5147.
+Episode terminated at time: 240 with return: -22.9082.
+Episode terminated at time: 240 with return: -24.3541.
+Episode terminated at time: 240 with return: -22.0780.
+Episode terminated at time: 240 with return: -20.1028.
+Episode terminated at time: 240 with return: -18.1931.
+Episode terminated at time: 240 with return: -22.9566.
+Episode terminated at time: 240 with return: -45.1523.
+Episode terminated at time: 240 with return: -43.9864.
+Episode terminated at time: 240 with return: -47.1478.
+Episode terminated at time: 240 with return: -45.1111.
+Episode terminated at time: 240 with return: -45.1053.
+Episode terminated at time: 240 with return: -46.8963.
+Episode terminated at time: 240 with return: -45.0691.
+Episode terminated at time: 240 with return: -46.1179.
+Episode terminated at time: 240 with return: -44.5568.
+Episode terminated at time: 240 with return: -46.8046.
+Episode terminated at time: 240 with return: -44.5150.
+Episode terminated at time: 240 with return: -44.3629.
+Episode terminated at time: 240 with return: -44.5637.
+Episode terminated at time: 240 with return: -45.7631.
+Episode terminated at time: 240 with return: -46.9375.
+Episode terminated at time: 240 with return: -46.2607.
+Episode terminated at time: 240 with return: -46.2802.
+Episode terminated at time: 240 with return: -45.2470.
+Episode terminated at time: 240 with return: -46.4717.
+Episode terminated at time: 240 with return: -43.8171.
+Episode terminated at time: 240 with return: -22.5385.
+Episode terminated at time: 240 with return: -22.7302.
+Episode terminated at time: 240 with return: -18.1271.
+Episode terminated at time: 240 with return: -25.0398.
+Episode terminated at time: 240 with return: -20.4519.
+Episode terminated at time: 240 with return: -22.2207.
+Episode terminated at time: 240 with return: -18.9588.
+Episode terminated at time: 240 with return: -21.4567.
+Episode terminated at time: 240 with return: -20.6461.
+Episode terminated at time: 240 with return: -20.3924.
+
+Episode: 360
+mean_train_value_grad_norm: 9.1107
+mean_train_value_loss: 0.7630
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.5026
+mean_train_policy_loss: -2.0714
+mean_train_reward: -0.1833
+mean_train_percentage_of_v_out_of_control: 0.2423
+mean_train_percentage_of_lower_than_lower_v: 0.0480
+mean_train_percentage_of_higher_than_upper_v: 0.1942
+mean_train_totally_controllable_ratio: 0.4059
+mean_train_average_voltage_deviation: 0.0332
+mean_train_average_voltage: 1.0124
+mean_train_max_voltage_drop_deviation: 0.0038
+mean_train_max_voltage_rise_deviation: 0.0153
+mean_train_total_line_loss: 2.4368
+mean_train_q_loss: 1.5010
+mean_train_destroy: 0.0000
+mean_train_ns_A: 0.4315
+mean_train_ns_hour: 8.5000
+mean_train_ns_load: 0.0899
+mean_train_ns_load_frac: 0.1499
+mean_train_ns_y: 0.0241
+mean_train_ns_sat: 0.0342
+mean_train_ns_clipped: 0.0000
+mean_train_ns_x_std: 0.0142
+mean_train_ns_q_exec_abs: 1.5010
+mean_train_ns_q_cmd_abs: 1.4964
+mean_train_ns_resid_after: 0.0452
+mean_train_pact_trust_pol: 0.9000
+mean_train_pact_trust_app: 0.8908
+mean_train_pact_conf: 0.9898
+mean_train_pact_pred_err: 0.0409
+mean_train_pact_corr_abs: 0.0481
+mean_train_pact_fit_gain: 0.5644
+mean_train_pact_cond_psi: 962.5439
+mean_train_pact_beta_cos: 0.5860
+mean_train_pact_beta_relerr: 2.0086
+mean_train_pact_updates: 128401.0000
+mean_train_pact_skipped: 0.0000
+mean_train_pact_bounded: 128139.0000
+mean_train_pact_diverged: 0.0000
+mean_train_pact_resets: 0.0000
+mean_test_reward: -0.0889
+mean_test_percentage_of_v_out_of_control: 0.0154
+mean_test_percentage_of_lower_than_lower_v: 0.0046
+mean_test_percentage_of_higher_than_upper_v: 0.0108
+mean_test_totally_controllable_ratio: 0.9473
+mean_test_average_voltage_deviation: 0.0147
+mean_test_average_voltage: 0.9946
+mean_test_max_voltage_drop_deviation: 0.0002
+mean_test_max_voltage_rise_deviation: 0.0004
+mean_test_total_line_loss: 0.9349
+mean_test_q_loss: 0.7422
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.1900
+mean_test_ns_hour: 12.0421
+mean_test_ns_load: 0.0313
+mean_test_ns_load_frac: 0.0522
+mean_test_ns_y: -0.0058
+mean_test_ns_sat: 0.0015
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0076
+mean_test_ns_q_exec_abs: 0.7422
+mean_test_ns_q_cmd_abs: 0.7467
+mean_test_ns_resid_after: 0.0182
+mean_test_pact_trust_pol: 0.9000
+mean_test_pact_trust_app: 0.8921
+mean_test_pact_conf: 0.9912
+mean_test_pact_pred_err: 0.0189
+mean_test_pact_corr_abs: 0.0300
+mean_test_pact_fit_gain: 0.0028
+mean_test_pact_cond_psi: 175244.0624
+mean_test_pact_beta_cos: 0.0507
+mean_test_pact_beta_relerr: 77.2952
+mean_test_pact_updates: 129710.0000
+mean_test_pact_skipped: 0.0000
+mean_test_pact_bounded: 129448.0000
+mean_test_pact_diverged: 0.0000
+mean_test_pact_resets: 0.0000
+The model is saved!
+
+Episode terminated at time: 240 with return: -45.8707.
+Episode terminated at time: 240 with return: -46.5160.
+Episode terminated at time: 240 with return: -45.4358.
+Episode terminated at time: 240 with return: -43.7532.
+Episode terminated at time: 240 with return: -46.5619.
+Episode terminated at time: 240 with return: -44.0830.
+Episode terminated at time: 240 with return: -42.8981.
+Episode terminated at time: 240 with return: -46.2963.
+Episode terminated at time: 240 with return: -45.8714.
+Episode terminated at time: 240 with return: -43.9475.
+Episode terminated at time: 240 with return: -45.6408.
+Episode terminated at time: 240 with return: -45.3688.
+Episode terminated at time: 240 with return: -45.1211.
+Episode terminated at time: 240 with return: -44.9622.
+Episode terminated at time: 240 with return: -46.4347.
+Episode terminated at time: 240 with return: -44.6445.
+Episode terminated at time: 240 with return: -44.4314.
+Episode terminated at time: 240 with return: -44.4407.
+Episode terminated at time: 240 with return: -46.0508.
+Episode terminated at time: 240 with return: -44.2561.
+Episode terminated at time: 240 with return: -17.9110.
+Episode terminated at time: 240 with return: -14.3758.
+Episode terminated at time: 240 with return: -19.3129.
+Episode terminated at time: 240 with return: -20.5144.
+Episode terminated at time: 240 with return: -17.7372.
+Episode terminated at time: 240 with return: -19.2704.
+Episode terminated at time: 240 with return: -20.4954.
+Episode terminated at time: 240 with return: -17.3810.
+Episode terminated at time: 240 with return: -22.2052.
+Episode terminated at time: 240 with return: -18.2479.
+Episode terminated at time: 240 with return: -46.6841.
+Episode terminated at time: 240 with return: -44.1960.
+Episode terminated at time: 240 with return: -43.9524.
+Episode terminated at time: 240 with return: -46.3646.
+Episode terminated at time: 240 with return: -45.2047.
+Episode terminated at time: 240 with return: -44.9500.
+Episode terminated at time: 240 with return: -44.7075.
+Episode terminated at time: 240 with return: -44.9054.
+Episode terminated at time: 240 with return: -45.1954.
+Episode terminated at time: 240 with return: -47.6421.
+Episode terminated at time: 240 with return: -46.7791.
+Episode terminated at time: 240 with return: -46.6058.
+Episode terminated at time: 240 with return: -45.2181.
+Episode terminated at time: 240 with return: -44.1869.
+Episode terminated at time: 240 with return: -44.8881.
+Episode terminated at time: 240 with return: -45.9297.
+Episode terminated at time: 240 with return: -46.2601.
+Episode terminated at time: 240 with return: -46.0417.
+Episode terminated at time: 240 with return: -45.2716.
+Episode terminated at time: 240 with return: -45.9462.
+Episode terminated at time: 240 with return: -22.0511.
+Episode terminated at time: 240 with return: -21.7838.
+Episode terminated at time: 240 with return: -17.9911.
+Episode terminated at time: 240 with return: -14.5675.
+Episode terminated at time: 240 with return: -18.2786.
+Episode terminated at time: 240 with return: -20.1219.
+Episode terminated at time: 240 with return: -15.4214.
+Episode terminated at time: 240 with return: -22.1056.
+Episode terminated at time: 240 with return: -18.9062.
+Episode terminated at time: 240 with return: -20.6887.
+
+Episode: 400
+mean_train_value_grad_norm: 3.9349
+mean_train_value_loss: 0.7612
+mean_train_entropy: 1.4189
+mean_train_policy_grad_norm: 0.0389
+mean_train_policy_loss: -2.2754
+mean_train_reward: -0.1922
+mean_train_percentage_of_v_out_of_control: 0.3146
+mean_train_percentage_of_lower_than_lower_v: 0.1730
+mean_train_percentage_of_higher_than_upper_v: 0.1415
+mean_train_totally_controllable_ratio: 0.3515
+mean_train_average_voltage_deviation: 0.0396
+mean_train_average_voltage: 0.9952
+mean_train_max_voltage_drop_deviation: 0.0126
+mean_train_max_voltage_rise_deviation: 0.0122
+mean_train_total_line_loss: 2.8329
+mean_train_q_loss: 1.5267
+mean_train_destroy: 0.0000
+mean_train_ns_A: 0.3860
+mean_train_ns_hour: 16.2500
+mean_train_ns_load: 0.0923
+mean_train_ns_load_frac: 0.1538
+mean_train_ns_y: 0.0455
+mean_train_ns_sat: 0.0494
+mean_train_ns_clipped: 0.0000
+mean_train_ns_x_std: 0.0149
+mean_train_ns_q_exec_abs: 1.5267
+mean_train_ns_q_cmd_abs: 1.5083
+mean_train_ns_resid_after: 0.0666
+mean_train_pact_trust_pol: 0.9000
+mean_train_pact_trust_app: 0.8920
+mean_train_pact_conf: 0.9911
+mean_train_pact_pred_err: 0.0676
+mean_train_pact_corr_abs: 0.0809
+mean_train_pact_fit_gain: 0.5690
+mean_train_pact_cond_psi: 1048.0458
+mean_train_pact_beta_cos: 0.4189
+mean_train_pact_beta_relerr: 6.5695
+mean_train_pact_updates: 142681.0000
+mean_train_pact_skipped: 0.0000
+mean_train_pact_bounded: 142419.0000
+mean_train_pact_diverged: 0.0000
+mean_train_pact_resets: 0.0000
+mean_test_reward: -0.0803
+mean_test_percentage_of_v_out_of_control: 0.0441
+mean_test_percentage_of_lower_than_lower_v: 0.0038
+mean_test_percentage_of_higher_than_upper_v: 0.0403
+mean_test_totally_controllable_ratio: 0.9138
+mean_test_average_voltage_deviation: 0.0192
+mean_test_average_voltage: 0.9905
+mean_test_max_voltage_drop_deviation: 0.0001
+mean_test_max_voltage_rise_deviation: 0.0025
+mean_test_total_line_loss: 1.0978
+mean_test_q_loss: 0.6108
+mean_test_destroy: 0.0000
+mean_test_ns_A: 0.2382
+mean_test_ns_hour: 11.5356
+mean_test_ns_load: 0.0394
+mean_test_ns_load_frac: 0.0656
+mean_test_ns_y: 0.0129
+mean_test_ns_sat: 0.0009
+mean_test_ns_clipped: 0.0000
+mean_test_ns_x_std: 0.0070
+mean_test_ns_q_exec_abs: 0.6108
+mean_test_ns_q_cmd_abs: 0.6204
+mean_test_ns_resid_after: 0.0180
+mean_test_pact_trust_pol: 0.9000
+mean_test_pact_trust_app: 0.8908
+mean_test_pact_conf: 0.9897
+mean_test_pact_pred_err: 0.0181
+mean_test_pact_corr_abs: 0.0358
+mean_test_pact_fit_gain: 0.3821
+mean_test_pact_cond_psi: 95924.4406
+mean_test_pact_beta_cos: 0.0251
+mean_test_pact_beta_relerr: 85.0944
+mean_test_pact_updates: 143990.0000
+mean_test_pact_skipped: 0.0000
+mean_test_pact_bounded: 143728.0000
+mean_test_pact_diverged: 0.0000
+mean_test_pact_resets: 0.0000
+The model is saved!
+
+ns layer: agent-steps seen 3207380, disturbed 1550516 (sigma=3.0, coupled)
